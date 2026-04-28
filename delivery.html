@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sharad Kumar | Delivery</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="sub-page-container">
+
+<div class="letterhead">
+    <div class="side-block"></div>
+    <div class="header-center">
+        <h1>SHARAD KUMAR</h1>
+        <p class="tagline">Operating at the intersection of Markets, Technology and Delivery</p>
+    </div>
+    <div class="side-block">
+        <svg viewBox="0 0 120 120" width="80" height="80">
+            <defs><path id="bottom-arc" d="M 15,60 A 45,45 0 0,0 105,60"/></defs>
+            <image href="logo.png" x="20" y="15" width="80" height="80" style="filter: brightness(2.5) saturate(3) hue-rotate(5deg);"/>
+            <text font-size="11" fill="#d4af37" font-family="Segoe UI, sans-serif" font-weight="500" letter-spacing="2">
+                <textPath href="#bottom-arc">Addicted to Results</textPath>
+            </text>
+        </svg>
+    </div>
+</div>
+
+<div class="sub-carousel-section">
+<div class="page-header-row">
+    <div class="page-section-title">Key Delivery Portfolios</div>
+    <a href="index.html"><i class="fas fa-arrow-up"></i> Back to Main</a>
+</div>
+
+    <div class="sub-carousel-desktop">
+        <div class="sub-page-grid" id="desktop-grid"></div>
+        <div class="sub-carousel-nav">
+            <button class="sub-arrow" onclick="desktopNav(-1)">&#8592;</button>
+            <span class="sub-counter" id="desktop-counter">1 / 2</span>
+            <button class="sub-arrow" onclick="desktopNav(1)">&#8594;</button>
+        </div>
+    </div>
+
+    <div class="sub-carousel-mobile">
+        <div class="sub-swipe-wrapper">
+            <div class="sub-swipe-sidebar left" onclick="mobileNav(-1)">&#8592;</div>
+            <div class="sub-swipe-viewport">
+                <div class="sub-swipe-track" id="mobile-track"></div>
+            </div>
+            <div class="sub-swipe-sidebar right" onclick="mobileNav(1)">&#8594;</div>
+        </div>
+        <div class="sub-swipe-counter" id="mobile-counter">1 / 4</div>
+    </div>
+</div>
+
+<div class="extra-section">
+    <div class="page-section-title">Additional GTM Approaches</div>
+    <ul class="extra-list">
+        <li>Designed, defined and developed XML templates to eliminate dependencies on external systems while independently proving code being fit for purpose</li>
+        <li>Converted productivity gains into additional new programs resulting in continuity of team for longer than initial contract period</li>
+        <li>Enabled interactive reporting dashboard by migrating Mainframe Data into Macro enabled MS-Excel Workbook with real time graphs</li>
+    </ul>
+</ul>
+</div>
+
+<div class="back-to-main">
+    <a href="index.html"><i class="fas fa-arrow-up"></i> Back to Main</a>
+</div>
+</div>
+
+</div>
+<script>
+const cards = [
+    {
+        title: "Global Delivery CoE",
+        mandate: "Establish and operationalize a scalable Delivery Center of Excellence",
+        narrative: "Built a delivery engine, transforming fragmented execution into standardized processes and automation-led operating models, enabling scalable, high-quality outcomes with productivity gains and execution discipline.",
+        bullets: [
+            "Scaled pilot team of 34 to 425+ FTEs in ~18 months, serving 7 business lines, establishing a high-velocity global delivery organization with capacity expansion, operational maturity, and multi-line scalability.",
+            "Implemented PMO and extensible federated EPMO models, authoring governance frameworks and reusable assets to drive execution discipline, standardization, cross-program alignment, and portfolio-level visibility.",
+            "Rationalized 3000+ QA artifacts into fewer than 350 reusable, plug-and-play workflow components, enabling business process automation, efficiency gains, cycle time reduction, and operational excellence."
+        ],
+        outcome: "65% cost reduction | 48% faster readiness | 35% faster ramp-up"
+    },
+    {
+        title: "Turnaround & Hyper-Scale",
+        mandate: "Recover and scale critical engagements with stability while instilling stakeholder confidence and trust",
+        narrative: "Stabilized and scaled a critical, at-risk engagement, enabling program recovery and growth continuity through disciplined delivery and transparency, instilling stakeholder trust and reinforcing credibility.",
+        bullets: [
+            "Stabilized a critical 60 FTE at-risk engagement, driving execution recovery and accelerated scale to 180 FTE in 10 months, restoring stakeholder confidence through operational control with sustained momentum.",
+            "Architected in-sprint progressive automation and intelligent regression frameworks from development through production certification, enabling quality acceleration, coverage expansion, and release readiness.",
+            "Reset KPI and balanced scorecard-driven governance with structured stakeholder cadences, enabling performance visibility, accountability, execution control, and governance discipline."
+        ],
+        outcome: "40% defect reduction | 60% faster regression | 25% cost reduction"
+    },
+    {
+        title: "Cloud Adoption",
+        mandate: "Execute enterprise-scale cloud migration with speed, control, and resilience",
+        narrative: "Orchestrated enterprise-wide cloud modernization, transitioning applications into a cloud-native ecosystem with controlled execution, high velocity, platform robustness, and architectural coherence.",
+        bullets: [
+            "Executed large-scale migrations of 6,000+ applications using 5R strategies (Rehost, Replatform, Refactor, Retain, Retire), enabling workload optimization, risk-managed transition, and migration efficiency at scale.",
+            "Established factory-modeled deployment pipelines and delivery frameworks with automation at scale, enabling execution consistency, rollout predictability, and accelerated release velocity.",
+            "Led governance and escalation frameworks across globally distributed, multi-vendor ecosystems, ensuring alignment, risk mitigation, seamless orchestration, and decision clarity."
+        ],
+        outcome: "30% faster migration | Near-zero failover | High scalability & reduced escalations"
+    },
+    {
+        title: "Predictive Modeling",
+        mandate: "Enable intelligence-driven predictive modeling for accelerated decisioning & risk mitigation",
+        narrative: "Shifted delivery from reactive execution to predictive intelligence, embedding data-driven foresight into engineering lifecycle enabling proactive decision-making, risk anticipation, and outcome predictability.",
+        bullets: [
+            "Implemented risk scoring and defect prediction models enabling proactive risk mitigation, quality forecasting, failure prevention, predictive quality engineering, and early risk detection.",
+            "Enabled impact-based feature prioritization and capacity planning to drive optimal resource allocation, delivery focus, planning precision, throughput optimization, and demand-supply alignment.",
+            "Introduced analytics-driven governance and real-time dashboards for status tracking, compliance adherence, decision intelligence, and governance visibility with audit readiness."
+        ],
+        outcome: "30% defect reduction | Better time utilization | Higher deployment reliability"
+    }
+];
+
+function buildCard(card) {
+    return `<div class="sub-card">
+        <h3>${card.title}</h3>
+        <div class="sub-mandate">Mandate: ${card.mandate}</div>
+        <div class="sub-narrative">${card.narrative}</div>
+        <ul>${card.bullets.map(b => `<li>${b}</li>`).join('')}</ul>
+        <div class="sub-outcome">${card.outcome}</div>
+    </div>`;
+}
+
+let desktopPage = 0;
+const isTabletPortrait = () => window.innerWidth >= 701 && window.innerWidth <= 1024 && window.matchMedia("(orientation: portrait)").matches;
+
+const desktopPages = [[cards[0], cards[1]], [cards[2], cards[3]]];
+
+function renderDesktop() {
+    const pageCards = isTabletPortrait() ? [cards[0], cards[1], cards[2], cards[3]] : desktopPages[desktopPage];
+    document.getElementById('desktop-grid').innerHTML = pageCards.map(buildCard).join('');
+    document.getElementById('desktop-counter').textContent = isTabletPortrait() ? '' : (desktopPage + 1) + ' / ' + desktopPages.length;
+}
+
+function desktopNav(dir) {
+    desktopPage = (desktopPage + dir + desktopPages.length) % desktopPages.length;
+    renderDesktop();
+}
+
+let mobileCard = 0;
+
+function buildMobileCards() {
+    const track = document.getElementById('mobile-track');
+    if (!track) return;
+    track.innerHTML = '';
+    cards.forEach(card => {
+        const div = document.createElement('div');
+        div.className = 'sub-card';
+        div.style.cssText = 'min-width:100%;max-width:100%;flex-shrink:0;box-sizing:border-box;';
+        div.innerHTML = `<h3>${card.title}</h3>
+            <div class="sub-mandate">Mandate: ${card.mandate}</div>
+            <div class="sub-narrative">${card.narrative}</div>
+            <ul>${card.bullets.map(b => `<li>${b}</li>`).join('')}</ul>
+            <div class="sub-outcome">${card.outcome}</div>`;
+        track.appendChild(div);
+    });
+    updateMobile();
+}
+
+function updateMobile() {
+    const track = document.getElementById('mobile-track');
+    const counter = document.getElementById('mobile-counter');
+    if (!track || !counter) return;
+    track.style.transform = `translateX(${-mobileCard * 100}%)`;
+    counter.textContent = (mobileCard + 1) + ' / ' + cards.length;
+}
+
+function mobileNav(dir) {
+    mobileCard = (mobileCard + dir + cards.length) % cards.length;
+    updateMobile();
+}
+
+let touchStartX = 0;
+
+function initTouch() {
+    const track = document.getElementById('mobile-track');
+    if (track) {
+        track.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+        track.addEventListener('touchend', e => {
+            const diff = touchStartX - e.changedTouches[0].clientX;
+            if (Math.abs(diff) > 40) mobileNav(diff > 0 ? 1 : -1);
+        }, { passive: true });
+    }
+    const grid = document.getElementById('desktop-grid');
+    if (grid) {
+        grid.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+        grid.addEventListener('touchend', e => {
+            const diff = touchStartX - e.changedTouches[0].clientX;
+            if (Math.abs(diff) > 40) desktopNav(diff > 0 ? 1 : -1);
+        }, { passive: true });
+    }
+}
+
+window.addEventListener('load', () => { renderDesktop(); buildMobileCards(); initTouch(); });
+window.addEventListener('resize', () => { renderDesktop(); });</script>
+</body>
+</html>
