@@ -10,66 +10,73 @@
 <body>
 <div class="sub-page-container">
 
-<div class="letterhead">
-    <div class="side-block"></div>
-    <div class="header-center">
-        <h1>SHARAD KUMAR</h1>
-        <p class="tagline">Operating at the intersection of Markets, Technology and Delivery</p>
-    </div>
-    <div class="side-block">
-        <svg viewBox="0 0 120 120" width="80" height="80">
-            <defs><path id="bottom-arc" d="M 15,60 A 45,45 0 0,0 105,60"/></defs>
-            <image href="logo.png" x="20" y="15" width="80" height="80" style="filter: brightness(2.5) saturate(3) hue-rotate(5deg);"/>
-            <text font-size="11" fill="#d4af37" font-family="Segoe UI, sans-serif" font-weight="500" letter-spacing="2">
-                <textPath href="#bottom-arc">Addicted to Results</textPath>
-            </text>
-        </svg>
-    </div>
-</div>
-
-<div class="sub-carousel-section">
-<div class="page-header-row">
-    <div class="page-section-title">Key Solution Highlights</div>
-    <a href="index.html"><i class="fas fa-arrow-up"></i> Back to Main</a>
-</div>
-
-    <div class="sub-carousel-desktop">
-        <div class="sub-page-grid" id="desktop-grid"></div>
-        <div class="sub-carousel-nav">
-            <button class="sub-arrow" onclick="desktopNav(-1)">&#8592;</button>
-            <span class="sub-counter" id="desktop-counter">1 / 2</span>
-            <button class="sub-arrow" onclick="desktopNav(1)">&#8594;</button>
+    <!-- LETTERHEAD -->
+    <div class="letterhead">
+        <div class="side-block"></div>
+        <div class="header-center">
+            <h1>SHARAD KUMAR</h1>
+            <p class="tagline">Operating at the intersection of Markets, Technology and Delivery</p>
+        </div>
+        <div class="side-block">
+            <svg viewBox="0 0 120 120" width="80" height="80">
+                <defs><path id="bottom-arc" d="M 15,60 A 45,45 0 0,0 105,60"/></defs>
+                <image href="logo.png" x="20" y="15" width="80" height="80" style="filter: brightness(2.5) saturate(3) hue-rotate(5deg);"/>
+                <text font-size="11" fill="#d4af37" font-family="Segoe UI, sans-serif" font-weight="500" letter-spacing="2">
+                    <textPath href="#bottom-arc">Addicted to Results</textPath>
+                </text>
+            </svg>
         </div>
     </div>
 
-    <div class="sub-carousel-mobile">
-        <div class="sub-swipe-wrapper">
-            <div class="sub-swipe-sidebar left" onclick="mobileNav(-1)">&#8592;</div>
-            <div class="sub-swipe-viewport">
-                <div class="sub-swipe-track" id="mobile-track"></div>
+    <!-- CAROUSEL SECTION -->
+    <div class="sub-carousel-section">
+
+        <div class="page-header-row">
+            <div class="page-section-title">Key Solution Highlights</div>
+            <a href="index.html"><i class="fas fa-arrow-up"></i> Back to Main</a>
+        </div>
+
+        <!-- Wide: two-column grid -->
+        <div class="sub-carousel-desktop">
+            <div class="sub-page-grid" id="desktop-grid"></div>
+            <div class="sub-carousel-nav">
+                <button class="sub-arrow" onclick="desktopNav(-1)">&#8592;</button>
+                <span class="sub-counter" id="desktop-counter">1 / 2</span>
+                <button class="sub-arrow" onclick="desktopNav(1)">&#8594;</button>
             </div>
-            <div class="sub-swipe-sidebar right" onclick="mobileNav(1)">&#8594;</div>
         </div>
-        <div class="sub-swipe-counter" id="mobile-counter">1 / 4</div>
+
+        <!-- Compact: swipe carousel -->
+        <div class="sub-carousel-mobile">
+            <div class="sub-swipe-wrapper">
+                <div class="sub-swipe-sidebar left" onclick="mobileNav(-1)">&#8592;</div>
+                <div class="sub-swipe-viewport">
+                    <div class="sub-swipe-track" id="mobile-track"></div>
+                </div>
+                <div class="sub-swipe-sidebar right" onclick="mobileNav(1)">&#8594;</div>
+            </div>
+            <div class="sub-swipe-counter" id="mobile-counter">1 / 4</div>
+        </div>
+
     </div>
-</div>
 
-<div class="extra-section">
-    <div class="page-section-title">Additional GTM Approaches</div>
-    <ul class="extra-list">
-        <li>Developed secured API gateway platform for leveraging APIs by authorised consumers</li>
-        <li>Developed cloud hosted solution for Digital Health, Marketing & Omni channel</li>
-        <li>Extended Digital Health into Digital Life & Health aiding underwriters for premium calculation in alignment to regulatory compliances</li>
-    </ul>
-</ul>
-</div>
+    <!-- ADDITIONAL SECTION -->
+    <div class="extra-section">
+        <div class="page-section-title">Additional Solution Highlights</div>
+        <ul class="extra-list">
+            <li>Developed secured API gateway platform for leveraging APIs by authorised consumers</li>
+            <li>Developed cloud hosted solution for Digital Health, Marketing &amp; Omni channel</li>
+            <li>Extended Digital Health into Digital Life &amp; Health aiding underwriters for premium calculation in alignment to regulatory compliances</li>
+        </ul>
+    </div>
 
-<div class="back-to-main">
-    <a href="index.html"><i class="fas fa-arrow-up"></i> Back to Main</a>
-</div>
-</div>
+    <!-- BACK TO MAIN -->
+    <div class="back-to-main">
+        <a href="index.html"><i class="fas fa-arrow-up"></i> Back to Main</a>
+    </div>
 
-</div>
+</div><!-- end .sub-page-container -->
+
 <script>
 const cards = [
     {
@@ -117,90 +124,8 @@ const cards = [
         outcome: "35% faster issue resolution | 20% performance improvement | 25% productivity gain"
     }
 ];
-
-function buildCard(card) {
-    return `<div class="sub-card">
-    
-        <h3>${card.title}</h3>
-        <div class="sub-mandate">Mandate: ${card.mandate}</div>
-        <div class="sub-narrative">${card.narrative}</div>
-        <ul>${card.bullets.map(b => `<li>${b}</li>`).join('')}</ul>
-        <div class="sub-outcome">${card.outcome}</div>
-    </div>`;
-}
-
-let desktopPage = 0;
-const isTabletPortrait = () => window.innerWidth >= 701 && window.innerWidth <= 1024 && window.matchMedia("(orientation: portrait)").matches;
-
-const desktopPages = [[cards[0], cards[1]], [cards[2], cards[3]]];
-
-function renderDesktop() {
-    const pageCards = isTabletPortrait() ? [cards[0], cards[1], cards[2], cards[3]] : desktopPages[desktopPage];
-    document.getElementById('desktop-grid').innerHTML = pageCards.map(buildCard).join('');
-    document.getElementById('desktop-counter').textContent = isTabletPortrait() ? '' : (desktopPage + 1) + ' / ' + desktopPages.length;
-}
-    
-function desktopNav(dir) {
-    desktopPage = (desktopPage + dir + desktopPages.length) % desktopPages.length;
-    renderDesktop();
-}
-
-let mobileCard = 0;
-
-function buildMobileCards() {
-    const track = document.getElementById('mobile-track');
-    if (!track) return;
-    track.innerHTML = '';
-    cards.forEach(card => {
-        const div = document.createElement('div');
-        div.className = 'sub-card';
-        div.style.cssText = 'min-width:100%;max-width:100%;flex-shrink:0;box-sizing:border-box;';
-        div.innerHTML = `<h3>${card.title}</h3>
-            <div class="sub-mandate">Mandate: ${card.mandate}</div>
-            <div class="sub-narrative">${card.narrative}</div>
-            <ul>${card.bullets.map(b => `<li>${b}</li>`).join('')}</ul>
-            <div class="sub-outcome">${card.outcome}</div>`;
-        track.appendChild(div);
-    });
-    updateMobile();
-}
-
-function updateMobile() {
-    const track = document.getElementById('mobile-track');
-    const counter = document.getElementById('mobile-counter');
-    if (!track || !counter) return;
-    track.style.transform = `translateX(${-mobileCard * 100}%)`;
-    counter.textContent = (mobileCard + 1) + ' / ' + cards.length;
-}
-
-function mobileNav(dir) {
-    mobileCard = (mobileCard + dir + cards.length) % cards.length;
-    updateMobile();
-}
-
-let touchStartX = 0;
-
-function initTouch() {
-    const track = document.getElementById('mobile-track');
-    if (track) {
-        track.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
-        track.addEventListener('touchend', e => {
-            const diff = touchStartX - e.changedTouches[0].clientX;
-            if (Math.abs(diff) > 40) mobileNav(diff > 0 ? 1 : -1);
-        }, { passive: true });
-    }
-    const grid = document.getElementById('desktop-grid');
-    if (grid) {
-        grid.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
-        grid.addEventListener('touchend', e => {
-            const diff = touchStartX - e.changedTouches[0].clientX;
-            if (Math.abs(diff) > 40) desktopNav(diff > 0 ? 1 : -1);
-        }, { passive: true });
-    }
-}
-
-window.addEventListener('load', () => { renderDesktop(); buildMobileCards(); initTouch(); });
-window.addEventListener('resize', () => { renderDesktop(); });
 </script>
+<script src="subpage.js"></script>
+
 </body>
 </html>
