@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Engineering Reliability into Digital Solutions | Sharad Kumar</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=DM+Sans:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { margin: 0; padding: 0; background: #080b0f; font-family: 'DM Sans', sans-serif; color: #f0f0f0; }
+html { height: 100%; }
+body { display: flex; flex-direction: column; align-items: center; min-height: 100vh; height: 100vh; max-height: 100vh; overflow: hidden; padding: 10px 8px; gap: 8px; box-sizing: border-box; }
+.lh { width: 100%; max-width: 716px; flex-shrink: 0; display: flex; align-items: center; justify-content: space-between; padding: 10px 16px; border: 1px solid rgba(201,168,76,0.25); background: #0d1117; border-radius: 8px; }
+.lh-name { font-size: 15px; font-weight: 700; letter-spacing: 2px; color: #f0f0f0; }
+.lh-tag { font-family: 'DM Mono', monospace; font-size: 8px; letter-spacing: 0.1em; color: #c9a84c; margin-top: 3px; }
+.carousel-row { width: 100%; max-width: 716px; flex: 1; min-height: 0; display: flex; align-items: stretch; }
+.pillar { width: 48px; min-width: 48px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; background: rgba(201,168,76,0.06); border: 1px solid rgba(201,168,76,0.25); color: #c9a84c; font-size: 22px; text-decoration: none; cursor: pointer; transition: background 0.2s; user-select: none; }
+.pillar:hover { background: rgba(201,168,76,0.15); }
+.pillar.left  { border-right: none; border-radius: 8px 0 0 8px; }
+.pillar.right { border-left: none; border-radius: 0 8px 8px 0; }
+.card-window { flex: 1; overflow-y: auto; border: 1px solid rgba(201,168,76,0.25); background: #0d1117; scrollbar-width: thin; scrollbar-color: rgba(201,168,76,0.25) transparent; }
+.card-window::-webkit-scrollbar { width: 4px; }
+.card-window::-webkit-scrollbar-thumb { background: rgba(201,168,76,0.25); border-radius: 2px; }
+.top-rule { height: 3px; background: linear-gradient(90deg, #e05a1e, #c9a84c, #e05a1e); }
+.bottom-rule { height: 3px; background: linear-gradient(90deg, #e05a1e, #c9a84c, #e05a1e); }
+
+  .header { padding: 22px 32px 16px; border-bottom: 1px solid rgba(201,168,76,0.2); }
+  .headline { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 900; color: #f0f0f0; line-height: 1.2; letter-spacing: -0.01em; margin-bottom: 6px; }
+  .headline em { font-style: italic; color: #c9a84c; }
+  .tagline { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.14em; color: #f0f0f0; margin-bottom: 12px; }
+  .subhead { font-size: 13px; color: #f0f0f0; line-height: 1.65; }
+  .pull-quote { margin: 0 32px; padding: 14px 0; border-bottom: 1px solid rgba(201,168,76,0.2); display: flex; gap: 14px; }
+  .bar { width: 3px; background: #c9a84c; flex-shrink: 0; border-radius: 2px; }
+  .pull-quote p { font-family: 'Playfair Display', serif; font-size: 13px; font-style: italic; color: #f0f0f0; line-height: 1.7; }
+  .pull-quote p strong { font-style: normal; font-weight: 700; }
+  .section-label { font-family: 'DM Mono', monospace; font-size: 8px; letter-spacing: 0.16em; text-transform: uppercase; color: #c9a84c; padding: 14px 32px 6px; }
+  .exemplar { padding: 14px 32px; border-top: 1px solid rgba(201,168,76,0.2); display: grid; grid-template-columns: 30px 1fr; gap: 0 12px; align-items: start; }
+  .exemplar:last-of-type { border-bottom: 1px solid rgba(201,168,76,0.2); }
+  .flag-col { display: flex; flex-direction: column; align-items: center; gap: 3px; padding-top: 2px; }
+  .flag { font-size: 17px; line-height: 1; }
+  .geo-tag { font-family: 'DM Mono', monospace; font-size: 6px; letter-spacing: 0.1em; color: #f0f0f0; text-transform: uppercase; }
+  .org-name { font-size: 13.5px; font-weight: 600; color: #f0f0f0; margin-bottom: 6px; }
+  .sector-tag { font-family: 'DM Mono', monospace; font-size: 7px; letter-spacing: 0.1em; text-transform: uppercase; color: #c9a84c; margin-bottom: 6px; }
+  .metrics { display: flex; flex-direction: column; gap: 4px; }
+  .metric-line { font-size: 12px; color: #f0f0f0; line-height: 1.55; padding-left: 16px; position: relative; }
+  .metric-line::before { content: '→'; position: absolute; left: 0; color: #c9a84c; font-size: 10px; }
+  .metric-line strong { color: #c9a84c; font-weight: 600; }
+  .org-insight { display: inline-block; margin-top: 7px; font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.06em; color: #0d1117; background: #c9a84c; padding: 3px 10px; font-weight: 500; }
+  .shift-block { margin: 14px 32px; background: #161b22; border: 1px solid rgba(201,168,76,0.25); padding: 14px 20px; }
+  .shift-label { font-family: 'DM Mono', monospace; font-size: 8px; letter-spacing: 0.14em; color: #c9a84c; margin-bottom: 10px; }
+  .shift-compare { display: grid; grid-template-columns: 1fr 26px 1fr; align-items: center; }
+  .shift-col { padding: 9px 11px; }
+  .shift-col.then { border: 1px solid rgba(255,255,255,0.08); }
+  .shift-col.now { border: 1px solid #c9a84c; background: rgba(201,168,76,0.12); }
+  .shift-era { font-family: 'DM Mono', monospace; font-size: 7px; letter-spacing: 0.2em; text-transform: uppercase; color: #f0f0f0; opacity: 0.4; margin-bottom: 5px; }
+  .shift-col.now .shift-era { color: #c9a84c; opacity: 1; }
+  .shift-q { font-size: 11px; font-style: italic; color: #f0f0f0; line-height: 1.5; }
+  .shift-col.now .shift-q { font-weight: 500; font-style: normal; }
+  .arrow-mid { text-align: center; color: #c9a84c; font-size: 15px; }
+  .impact-block { margin: 14px 32px; background: #161b22; border: 1px solid rgba(201,168,76,0.25); padding: 14px 20px; }
+  .impact-label { font-family: 'DM Mono', monospace; font-size: 8px; letter-spacing: 0.14em; color: #c9a84c; margin-bottom: 10px; }
+  .impact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .impact-item { padding: 10px 12px; border: 1px solid rgba(201,168,76,0.25); background: #0d1117; }
+  .impact-stat { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; color: #c9a84c; line-height: 1; margin-bottom: 4px; }
+  .impact-desc { font-size: 10px; color: #f0f0f0; line-height: 1.5; }
+  .layer-block { margin: 0 32px; padding: 14px 0; border-top: 1px solid rgba(201,168,76,0.2); }
+  .layer-block:last-of-type { border-bottom: 1px solid rgba(201,168,76,0.2); }
+  .layer-header { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+  .layer-pill { font-family: 'DM Mono', monospace; font-size: 8px; letter-spacing: 0.1em; text-transform: uppercase; color: #0d1117; background: #c9a84c; padding: 3px 10px; font-weight: 500; }
+  .layer-desc { font-size: 12px; color: #f0f0f0; line-height: 1.55; }
+  .tool-list { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 8px; }
+  .tool { font-family: 'DM Mono', monospace; font-size: 8px; letter-spacing: 0.06em; color: #c9a84c; border: 1px solid rgba(201,168,76,0.25); padding: 2px 8px; background: rgba(201,168,76,0.12); }
+  .timeline { margin: 0 32px; border-top: 1px solid rgba(201,168,76,0.2); }
+  .timeline-row { display: grid; grid-template-columns: 72px 1fr; gap: 0 16px; padding: 12px 0; border-bottom: 1px solid rgba(201,168,76,0.2); align-items: start; }
+  .era { font-family: 'DM Mono', monospace; font-size: 7px; letter-spacing: 0.16em; text-transform: uppercase; color: #c9a84c; padding-top: 2px; }
+  .era-desc { font-size: 12px; color: #f0f0f0; line-height: 1.6; }
+  .era-desc strong { color: #c9a84c; font-weight: 600; }
+  .forces { margin: 14px 32px; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; }
+  .force-item { background: #161b22; border: 1px solid rgba(201,168,76,0.25); padding: 12px; }
+  .force-label { font-family: 'DM Mono', monospace; font-size: 7px; letter-spacing: 0.12em; text-transform: uppercase; color: #c9a84c; margin-bottom: 6px; }
+  .force-text { font-size: 11px; color: #f0f0f0; line-height: 1.55; }
+  .spotlight { margin: 0 32px 14px; background: #161b22; border: 1px solid #c9a84c; padding: 14px 18px; }
+  .spotlight-label { font-family: 'DM Mono', monospace; font-size: 7px; letter-spacing: 0.16em; text-transform: uppercase; color: #c9a84c; margin-bottom: 8px; }
+  .spotlight-org { font-size: 13.5px; font-weight: 600; color: #f0f0f0; margin-bottom: 4px; }
+  .spotlight-text { font-size: 12px; color: #f0f0f0; line-height: 1.65; }
+  .spotlight-text strong { color: #c9a84c; font-weight: 600; }
+  .closing { padding: 14px 32px; border-top: 1px solid rgba(201,168,76,0.2); }
+  .closing-text { font-size: 12.5px; color: #f0f0f0; line-height: 1.75; margin-bottom: 14px; }
+  .closing-text strong { color: #f0f0f0; font-weight: 600; }
+  .series-note { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.08em; color: #c9a84c; border-left: 2px solid #c9a84c; padding-left: 10px; margin-bottom: 14px; line-height: 1.6; }
+  .tags { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 14px; }
+  .tag { font-family: 'DM Mono', monospace; font-size: 8px; letter-spacing: 0.07em; color: #c9a84c; border: 1px solid rgba(201,168,76,0.35); padding: 2px 8px; }
+
+.footer-strip { width: 100%; max-width: 716px; flex-shrink: 0; display: flex; justify-content: space-between; align-items: center; border: 1px solid rgba(201,168,76,0.25); border-radius: 8px; background: #0d1117; padding: 10px 28px; }
+.footer-item { display: flex; flex-direction: column; align-items: center; gap: 4px; text-decoration: none; flex: 1; transition: opacity 0.2s; }
+.footer-item:hover { opacity: 0.7; }
+.footer-item i { font-size: 18px; color: #c9a84c; }
+.footer-item span { font-family: 'DM Mono', monospace; font-size: 8px; letter-spacing: 1px; text-transform: uppercase; color: #8b949e; text-align: center; white-space: nowrap; }
+@media (max-width: 600px) {
+  html, body { overflow: auto; height: auto; min-height: unset; max-height: unset; }
+  .pillar { width: 28px; min-width: 28px; font-size: 14px; }
+  .footer-strip { padding: 8px 12px; }
+  .footer-item span { font-size: 6px; letter-spacing: 0.5px; }
+  .footer-item i { font-size: 15px; }
+}
+</style>
+</head>
+<body>
+<div class="lh">
+  <div>
+    <div class="lh-name">SHARAD KUMAR</div>
+    <div class="lh-tag">Operating at the intersection of Markets, Technology and Delivery</div>
+  </div>
+  <svg viewBox="0 0 120 120" width="50" height="50" style="flex-shrink:0;">
+    <defs><path id="arc2" d="M 15,60 A 45,45 0 0,0 105,60"/></defs>
+    <image href="logo.png" x="20" y="15" width="80" height="80" style="filter:brightness(2.5) saturate(3) hue-rotate(5deg);"/>
+    <text font-size="11" fill="#c9a84c" font-family="Segoe UI,sans-serif" font-weight="500" letter-spacing="2">
+      <textPath href="#arc2">Addicted to Results</textPath>
+    </text>
+  </svg>
+</div>
+<div class="carousel-row">
+  <a class="pillar left"  href="LinkedIn_Post_Observability_as_a_Solution_Capability.html" title="Observability as a Solution Capability">&#8592;</a>
+  <div class="card-window">
+    <div class="top-rule"></div>
+    <div class="header">
+    <h1 class="headline">Engineering <em>Reliability</em> into Digital Solutions</h1>
+    <div class="tagline"><em>An observation from the intersection of technology, solutions and markets</em></div>
+    <p class="subhead">For years, engineering practices remained in the background — testing treated as a final validation step. Today they are integral from initiation, shaping outcomes right from requirement definition. Digital systems no longer follow linear delivery cycles.</p>
+  </div>
+
+  <div class="pull-quote">
+    <div class="bar"></div>
+    <p>Reliability is no longer a downstream validation outcome — <strong>it is engineered into the solution from the beginning.</strong></p>
+  </div>
+
+  <div class="section-label"><em>A visible shift playing out across industries</em></div>
+
+  <div class="exemplar">
+    <div class="flag-col"><span class="flag">🇺🇸</span><span class="geo-tag">USA</span></div>
+    <div>
+      <div class="org-name">JPMorgan Chase</div>
+      <div class="sector-tag">Financial Services</div>
+      <div class="metrics">
+        <div class="metric-line">AI, data platforms, and cloud as <strong>core drivers of customer-facing innovation</strong> — not just internal enablers</div>
+        <div class="metric-line">Real-time payments and <strong>intelligent fraud detection</strong> as competitive differentiators</div>
+      </div>
+      <div class="org-insight">Technology as the competitive surface</div>
+    </div>
+  </div>
+
+  <div class="exemplar">
+    <div class="flag-col"><span class="flag">🇮🇳</span><span class="geo-tag">APAC</span></div>
+    <div>
+      <div class="org-name">Reliance Jio</div>
+      <div class="sector-tag">Telecom</div>
+      <div class="metrics">
+        <div class="metric-line">Cloud-native, all-IP ecosystem where <strong>architectural decisions directly enable reliability at scale</strong></div>
+        <div class="metric-line">Platform design fundamentally <strong>reshaping market dynamics</strong></div>
+      </div>
+      <div class="org-insight">Architecture as market strategy</div>
+    </div>
+  </div>
+
+  <div class="exemplar">
+    <div class="flag-col"><span class="flag">🇩🇪</span><span class="geo-tag">EUR</span></div>
+    <div>
+      <div class="org-name">Siemens</div>
+      <div class="sector-tag">Manufacturing</div>
+      <div class="metrics">
+        <div class="metric-line">Reliability embedded into <strong>digital twins and industrial IoT platforms</strong></div>
+        <div class="metric-line">Continuous monitoring, predictive maintenance, and <strong>system-level assurance</strong> as default</div>
+      </div>
+      <div class="org-insight">Reliability engineered, not tested in</div>
+    </div>
+  </div>
+
+  <div class="exemplar">
+    <div class="flag-col"><span class="flag">🇺🇸</span><span class="geo-tag">USA</span></div>
+    <div>
+      <div class="org-name">Amazon</div>
+      <div class="sector-tag">Hyperscale</div>
+      <div class="metrics">
+        <div class="metric-line">Distributed system design and <strong>fault-tolerant architectures</strong> institutionalised at scale</div>
+        <div class="metric-line">Reliability as a <strong>default characteristic</strong> — not a downstream validation outcome</div>
+      </div>
+      <div class="org-insight">Fault tolerance as foundational design</div>
+    </div>
+  </div>
+
+  <div class="shift-block">
+    <div class="shift-label"><em>The subtle yet important shift</em></div>
+    <div class="shift-compare">
+      <div class="shift-col then">
+        <div class="shift-era">Before</div>
+        <div class="shift-q">Testing as final validation — reliability confirmed at the end.</div>
+      </div>
+      <div class="arrow-mid">→</div>
+      <div class="shift-col now">
+        <div class="shift-era">Now</div>
+        <div class="shift-q">Engineering & intelligence built into systems — reliability by design from day one.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="closing">
+    <p class="closing-text">In an AI-accelerated world, reliability is no longer just a function. It is an <strong>integrated consideration and capability</strong> that supports trust, scalability, and market readiness.</p>
+    <div class="tags">
+      <span class="tag">#TechnologyLeadership</span>
+      <span class="tag">#DigitalTransformation</span>
+      <span class="tag">#EngineeringExcellence</span>
+      <span class="tag">#ReliabilityEngineering</span>
+      <span class="tag">#PlatformEngineering</span>
+      <span class="tag">#AI</span>
+      <span class="tag">#Cloud</span>
+      <span class="tag">#ProductEngineering</span>
+      <span class="tag">#Innovation</span>
+      <span class="tag">#TechStrategy</span>
+    </div>
+  </div>
+    <div class="bottom-rule"></div>
+  </div>
+  <a class="pillar right" href="LinkedIn_Post_Rethinking_How_Engineering_Teams_Power_Solutions_and_Go-To-Market.html" title="Rethinking How Engineering Teams Power Solutions and Go-To-Market">&#8594;</a>
+</div>
+<div class="footer-strip">
+  <a class="footer-item" href="https://www.linkedin.com/in/sharad-kumar-11264247" target="_blank"><i class="fa-brands fa-linkedin"></i><span>Connect</span></a>
+  <a class="footer-item" href="mailto:sharad.rsg@gmail.com?subject=Connect with Sharad"><i class="fa-solid fa-envelope"></i><span>E-Mail</span></a>
+  <a class="footer-item" href="index.html"><i class="fa-solid fa-house"></i><span>Home</span></a>
+  <a class="footer-item" href="https://calendly.com/sharad-kumar-ms/strategic-connect" target="_blank"><i class="fa-solid fa-calendar-days"></i><span>Schedule</span></a>
+  <a class="footer-item" href="https://www.linkedin.com/in/sharad-kumar-11264247" target="_blank"><i class="fa-brands fa-linkedin-in"></i><span>Follow</span></a>
+</div>
+</body>
+</html>

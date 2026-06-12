@@ -1,0 +1,271 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sharad Kumar | About</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+/* =============================================
+   ABOUT PAGE — SPECIFIC STYLES
+   ============================================= */
+
+/* Belief headline — white, prominent */
+.belief {
+    text-align: center;
+    max-width: 900px;
+    margin: 10px auto 16px auto;
+    font-size: var(--font-title);
+    font-weight: 600;
+    line-height: 1.5;
+    color: var(--text-primary);
+    letter-spacing: 0.3px;
+}
+
+/* About section blocks */
+.about-section {
+    margin-bottom: 16px;
+}
+
+.about-section p {
+    font-size: var(--font-sm);
+    line-height: 1.7;
+    color: var(--text-primary);
+    margin: 0 0 10px 0;
+}
+
+.about-section p:last-child {
+    margin-bottom: 0;
+}
+
+.about-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 10px 0;
+}
+
+.about-section ul li {
+    font-size: var(--font-sm);
+    color: var(--text-primary);
+    line-height: 1.6;
+    padding-left: 16px;
+    position: relative;
+    margin-bottom: 6px;
+}
+
+.about-section ul li::before {
+    content: '◆';
+    color: var(--gold);
+    font-size: 8px;
+    position: absolute;
+    left: 0;
+    top: 4px;
+}
+
+/* Intelligent Solutions link */
+.solutions-link {
+    text-align: right;
+    margin: 4px 0 16px 0;
+    font-size: var(--font-sm);
+}
+
+.solutions-link a {
+    color: var(--text-link);
+    text-decoration: none;
+}
+
+.solutions-link a:hover {
+    text-decoration: underline;
+}
+
+/* Closing gold statement */
+.closing-statement {
+    text-align: center;
+    max-width: 900px;
+    margin: 8px auto 20px auto;
+    font-size: var(--font-sm);
+    line-height: 1.7;
+    color: var(--gold);
+    font-style: italic;
+}
+
+/* Nav row — Explore My Work | connect strip | View My Blogs */
+.nav-connect-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--gap);
+    padding: 12px 0 8px 0;
+    border-top: 1px solid var(--gold-faint);
+    margin-top: auto;
+    flex-wrap: wrap;
+}
+
+.nav-btn a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-link);
+    font-size: var(--font-sm);
+    font-weight: 600;
+    text-decoration: none;
+    border: 1px solid var(--text-link);
+    padding: 7px 18px;
+    border-radius: 20px;
+    white-space: nowrap;
+    transition: background 0.2s;
+}
+
+.nav-btn a:hover {
+    background: rgba(77, 163, 255, 0.1);
+}
+
+/* Connect icons strip — between the two buttons */
+.connect-icons {
+    display: flex;
+    align-items: center;
+    gap: clamp(14px, 2.5vw, 32px);
+    flex: 1;
+    justify-content: center;
+}
+
+.connect-icons a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    text-decoration: none;
+    color: var(--text-primary);
+    font-size: var(--font-xs);
+    transition: opacity 0.2s;
+}
+
+.connect-icons a:hover { opacity: 0.75; }
+
+.connect-icons a i {
+    font-size: clamp(16px, 2vw, 22px);
+}
+
+/* Compact overrides */
+@media (max-width: 700px) {
+    .belief {
+        font-size: var(--font-base);
+        margin: 8px auto 12px auto;
+    }
+    .nav-connect-row {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+    }
+    .nav-btn a {
+        justify-content: center;
+    }
+    .connect-icons {
+        justify-content: space-around;
+    }
+}
+
+/* Tablet overrides */
+@media (min-width: 701px) and (max-width: 1024px) {
+    .nav-connect-row {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+}
+</style>
+</head>
+<body>
+<div class="sub-page-container">
+
+    <!-- LETTERHEAD -->
+    <div class="letterhead">
+        <div class="side-block">
+            <img src="image.jpg" alt="Sharad Kumar" class="profile-pic">
+        </div>
+        <div class="header-center">
+            <h1>SHARAD KUMAR</h1>
+            <p class="tagline">Operating at the intersection of Markets, Technology and Delivery</p>
+        </div>
+        <div class="side-block">
+            <svg viewBox="0 0 120 120" width="80" height="80">
+                <defs><path id="bottom-arc" d="M 15,60 A 45,45 0 0,0 105,60"/></defs>
+                <image href="logo.png" x="20" y="15" width="80" height="80" style="filter: brightness(2.5) saturate(3) hue-rotate(5deg);"/>
+                <text font-size="11" fill="#d4af37" font-family="Segoe UI, sans-serif" font-weight="500" letter-spacing="2">
+                    <textPath href="#bottom-arc">Addicted to Results</textPath>
+                </text>
+            </svg>
+        </div>
+    </div>
+
+    <!-- BELIEF HEADLINE -->
+    <p class="belief">I believe in architecting intelligent, scalable organisations where technology and commercial outcomes are seamlessly aligned, enabling enterprises to thrive in a rapidly evolving AI-enabled digital landscape.</p>
+
+    <!-- ABOUT ME -->
+    <div class="about-section">
+        <div class="section-title">About Me</div>
+        <p>A growth and transformation leader with over three decades across Accenture, Wipro, Tech Mahindra, Capgemini, HCL, and others. Three things have been consistent — owning GTM motions and growth, connecting technology and commercial solutions to value, and building delivery organisations at scale while turning around at-risk complex solutions, portfolios, and business units by salvaging red-flags.</p>
+        <p>In recent times engaged with enterprises and start-ups as advisor, contractor, and full-time employee — focused on sales, presales, techno-commercial solutioning, and setting up delivery and specialised practices. More recently AI has become central to how I work and what I deliver — not at arm's length but embedded into GTM, solutioning, delivery, and most recently architecting strategy for onboarding an enterprise-wide AI ecosystem.</p>
+        <p>And it's not just at client level — even in my own work I've been pushing this boundary. I built and hosted public pages on GitHub, despite not having much of a coding background, working entirely through Agents. Just a clear outcome in mind and an iterative conversation to get there.</p>
+    </div>
+
+    <!-- THE WORK -->
+    <div class="about-section">
+        <div class="section-title">The Work — A Few Highlights</div>
+        <ul>
+            <li>Scaled a 34 FTE pilot to 425 FTEs in 18 months at Accenture — building a global Delivery CoE across 7 business lines.</li>
+            <li>Built and led a DevOps practice to $20 million in Year 1 at Tech Mahindra — incubated with margin resilience from inception.</li>
+            <li>Led cloud migration solutioning for 6,000 applications across industrial technology, automation, mobility, infrastructure, and healthcare.</li>
+            <li>Salvaged at-risk red-flag portfolios and business units — rebuilt trust, stabilised delivery, and scaled them sustainably.</li>
+            <li>Owned the full GTM motion — pipeline development, opportunity qualification, techno-commercial solutioning and structuring from first conversation through signed contract across IT, cloud, and digital transformation.</li>
+            <li>Drove ELA negotiations and JGTM strategies with HP, IBM, CA Technologies — 65%+ win rates across US, UK, and ASEAN.</li>
+            <li>Plenary keynote speaker and jury member across national and international industry forums on AI, DevOps, and digital transformation.</li>
+        </ul>
+        <p>Certified in Digital Strategy and Transformation. Completed 8 Digital COOCs across Social, Mobile, Analytics, Cloud, and IoT. Authored handbooks across DevOps, Quality Engineering, and Delivery Governance. Recipient of the Best Business Operator award alongside recognition across multiple international forums.</p>
+        <p>The learning curve has been deliberate and remains continuous — most recently leading deeper into AI as a practitioner, not an observer. Back in 2017 on the 6,000 app migration, early ML-based classification turned months of manual assessment into weeks and gave us a defensible, data-driven prioritisation model. That thread never stopped.</p>
+    </div>
+
+    <!-- INTELLIGENT SOLUTIONS LINK -->
+    <div class="solutions-link">
+        <a href="work.html">Intelligent Solutions in Practice &rarr;</a>
+    </div>
+
+    <!-- CLOSING GOLD STATEMENT -->
+    <p class="closing-statement">The pattern across Aviation, Energy, Healthcare, Financial Services and others is similar — process exists, systems exist, data exists. What's missing is intelligence connecting them without a human in every procedural handoff, yet delivering accurate and predictable outcomes.</p>
+
+    <!-- NAV + CONNECT STRIP -->
+    <div class="nav-connect-row">
+
+        <div class="nav-btn">
+            <a href="index.html"><i class="fa-solid fa-briefcase"></i> Explore My Work</a>
+        </div>
+
+        <div class="connect-icons">
+            <a href="https://www.linkedin.com/in/sharad-kumar-11264247" target="_blank">
+                <i class="fa-brands fa-linkedin" style="color:#0A66C2;"></i>
+                <span>Connect</span>
+            </a>
+            <a href="mailto:sharad.rsg@gmail.com?subject=Connect with Sharad">
+                <i class="fa-solid fa-envelope" style="color:var(--gold);"></i>
+                <span>E-Mail</span>
+            </a>
+            <a href="https://calendly.com/sharad-kumar-ms/strategic-connect" target="_blank">
+                <i class="fa-solid fa-calendar-check" style="color:#006BFF;"></i>
+                <span>Book My Calendar</span>
+            </a>
+            <a href="https://www.linkedin.com/in/sharad-kumar-11264247" target="_blank">
+                <i class="fa-brands fa-linkedin" style="color:#0A66C2;"></i>
+                <span>Follow</span>
+            </a>
+        </div>
+
+        <div class="nav-btn">
+            <a href="blogs.html"><i class="fa-solid fa-pen-nib"></i> View My Blogs</a>
+        </div>
+
+    </div>
+
+</div><!-- end .sub-page-container -->
+</body>
+</html>

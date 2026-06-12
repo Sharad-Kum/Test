@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Blogs | Sharad Kumar</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+.blogs-headline { text-align: center; padding: 6px 0 10px 0; }
+.blogs-headline h1 { font-size: var(--font-title); font-weight: bold; letter-spacing: 2px; text-transform: uppercase; color: var(--text-primary); margin: 0; }
+.blogs-table-wrap { max-width: 860px; margin: 0 auto; border: 1px solid var(--card-border); border-radius: 10px; overflow: hidden; }
+.blogs-table { width: 100%; border-collapse: collapse; }
+.blogs-table thead tr { background: var(--gold-bg-solid); }
+.blogs-table thead th { padding: 10px 16px; font-size: var(--font-xs); font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text-dark); text-align: left; }
+.blogs-table thead th:first-child { width: 48px; text-align: center; }
+.blogs-table thead th:last-child { width: 80px; text-align: center; }
+.blogs-table tbody tr { border-top: 1px solid var(--card-border); }
+.blogs-table tbody td { padding: 12px 16px; font-size: var(--font-sm); color: var(--text-primary); }
+.blogs-table tbody td:first-child { text-align: center; font-size: var(--font-xs); color: var(--text-muted); font-weight: 600; }
+.blogs-table tbody td:last-child { text-align: center; }
+.blog-read-link { display: inline-flex; align-items: center; gap: 5px; color: var(--text-link); text-decoration: none; font-size: var(--font-xs); font-weight: 600; letter-spacing: 0.5px; border: 1px solid var(--gold-faint); border-radius: 12px; padding: 3px 10px; cursor: pointer; transition: background 0.15s, border-color 0.15s; }
+.blog-read-link:hover { background: var(--gold-bg-solid); border-color: var(--gold-mid); }
+.footer-strip { display: flex; justify-content: space-between; align-items: center; max-width: 860px; margin: 24px auto 16px auto; padding: 14px 40px; border: 1px solid var(--card-border); border-radius: 10px; background: var(--card-bg); }
+.footer-item { display: flex; flex-direction: column; align-items: center; gap: 6px; text-decoration: none; flex: 1; transition: opacity 0.2s; }
+.footer-item:hover { opacity: 0.75; }
+.footer-item i { font-size: 20px; color: var(--gold); }
+.footer-item span { font-size: 9px; letter-spacing: 1px; text-transform: uppercase; color: var(--text-muted); text-align: center; white-space: nowrap; }
+
+/* Responsive table */
+@media (max-width: 600px) {
+    .blogs-table thead th:first-child { display: none; }
+    .blogs-table tbody td:first-child { display: none; }
+    .footer-strip { padding: 12px 16px; gap: 0; }
+    .footer-item span { font-size: 7px; letter-spacing: 0.5px; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="letterhead">
+    <div class="side-block"><img src="image.jpg" alt="Sharad Kumar" class="profile-pic"></div>
+    <div class="header-center">
+        <h1>SHARAD KUMAR</h1>
+        <p class="tagline">Operating at the intersection of Markets, Technology and Delivery</p>
+    </div>
+    <div class="side-block">
+        <svg viewBox="0 0 120 120" width="80" height="80">
+            <defs><path id="bottom-arc" d="M 15,60 A 45,45 0 0,0 105,60"/></defs>
+            <image href="logo.png" x="20" y="15" width="80" height="80" style="filter: brightness(2.5) saturate(3) hue-rotate(5deg);"/>
+            <text font-size="11" fill="#d4af37" font-family="Segoe UI, sans-serif" font-weight="500" letter-spacing="2">
+                <textPath href="#bottom-arc">Addicted to Results</textPath>
+            </text>
+        </svg>
+    </div>
+</div>
+
+<div class="blogs-headline"><h1>My Blogs</h1></div>
+
+<div class="blogs-table-wrap">
+    <table class="blogs-table">
+        <thead><tr><th>#</th><th>Title</th><th>Read</th></tr></thead>
+        <tbody>
+            <tr><td>1</td><td>The Real Constraint in Transformation</td><td><a class="blog-read-link" href="LinkedIn_Post_The_Real_Constraint_in_Transformation.html">Read <i class="fa-solid fa-arrow-right"></i></a></td></tr>
+            <tr><td>2</td><td>Observability as a Solution Capability</td><td><a class="blog-read-link" href="LinkedIn_Post_Observability_as_a_Solution_Capability.html">Read <i class="fa-solid fa-arrow-right"></i></a></td></tr>
+            <tr><td>3</td><td>Engineering Reliability into Digital Solutions</td><td><a class="blog-read-link" href="LinkedIn_Post_Engineering_Reliability_into_Digital_Solutions.html">Read <i class="fa-solid fa-arrow-right"></i></a></td></tr>
+            <tr><td>4</td><td>Rethinking How Engineering Teams Power Solutions and Go-To-Market</td><td><a class="blog-read-link" href="LinkedIn_Post_Rethinking_How_Engineering_Teams_Power_Solutions_and_Go-To-Market.html">Read <i class="fa-solid fa-arrow-right"></i></a></td></tr>
+            <tr><td>5</td><td>Technology Strategy and Market Positioning</td><td><a class="blog-read-link" href="LinkedIn_Post_Technology_Strategy_and_Market_Positioning.html">Read <i class="fa-solid fa-arrow-right"></i></a></td></tr>
+            <tr><td>6</td><td>The Rise of AI-Assisted Organisations</td><td><a class="blog-read-link" href="LinkedIn_Post_The_Rise_of_AI-Assisted_Organisations.html">Read <i class="fa-solid fa-arrow-right"></i></a></td></tr>
+            <tr><td>7</td><td>The Expanding Role of Technology Leaders</td><td><a class="blog-read-link" href="LinkedIn_Post_The_Expanding_Role_of_Technology_Leaders.html">Read <i class="fa-solid fa-arrow-right"></i></a></td></tr>
+            <tr><td>8</td><td>The Quiet Shift in Technology Leadership</td><td><a class="blog-read-link" href="LinkedIn_Post_The_Quiet_Shift_in_Technology_Leadership.html">Read <i class="fa-solid fa-arrow-right"></i></a></td></tr>
+            <!-- ADD MORE ROWS HERE — newest first, increment # -->
+        </tbody>
+    </table>
+</div>
+
+<div class="footer-strip">
+    <a class="footer-item" href="https://www.linkedin.com/in/sharad-kumar-11264247" target="_blank"><i class="fa-brands fa-linkedin"></i><span>Connect with me</span></a>
+    <a class="footer-item" href="mailto:sharad.rsg@gmail.com?subject=Connect with Sharad"><i class="fa-solid fa-envelope"></i><span>E-Mail me</span></a>
+    <a class="footer-item" href="index.html"><i class="fa-solid fa-house"></i><span>Home</span></a>
+    <a class="footer-item" href="https://calendly.com/sharad-kumar-ms/strategic-connect" target="_blank"><i class="fa-solid fa-calendar-days"></i><span>Schedule a call</span></a>
+    <a class="footer-item" href="https://www.linkedin.com/in/sharad-kumar-11264247" target="_blank"><i class="fa-brands fa-linkedin-in"></i><span>Follow me</span></a>
+</div>
+
+</div>
+</body>
+</html>

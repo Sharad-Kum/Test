@@ -5,7 +5,6 @@
    calls this script after its data block.
    ============================================= */
 
-/* desktopPages is always 2 cards per page — no orientation logic */
 const desktopPages = [[cards[0], cards[1]], [cards[2], cards[3]]];
 
 function buildCard(card) {
@@ -19,6 +18,9 @@ function buildCard(card) {
 }
 
 let desktopPage = 0;
+
+const isTablet = () => window.innerWidth >= 701 && window.innerWidth <= 1024;
+const isMobileLandscape = () => window.innerWidth > 700 && window.innerHeight <= 500;
 
 function renderDesktop() {
     document.getElementById('desktop-grid').innerHTML =
@@ -86,5 +88,27 @@ function initTouch() {
     }
 }
 
-window.addEventListener('load', () => { renderDesktop(); buildMobileCards(); initTouch(); });
-window.addEventListener('resize', () => { renderDesktop(); });
+function updateSwipeVisibility() {
+    const mobile  = document.querySelector('.sub-carousel-mobile');
+    const desktop = document.querySelector('.sub-carousel-desktop');
+    if (!mobile || !desktop) return;
+    if (isMobileLandscape()) {
+        mobile.style.display  = 'none';
+        desktop.style.display = 'flex';
+    } else {
+        mobile.style.display  = '';
+        desktop.style.display = '';
+    }
+}
+
+window.addEventListener('load', () => {
+    renderDesktop();
+    buildMobileCards();
+    initTouch();
+    updateSwipeVisibility();
+});
+
+window.addEventListener('resize', () => {
+    renderDesktop();
+    updateSwipeVisibility();
+});

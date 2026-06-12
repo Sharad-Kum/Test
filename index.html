@@ -408,6 +408,27 @@
     }
 }
 
+.blogs-pill {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    text-decoration: none;
+    border: 1px solid var(--gold-faint);
+    border-radius: 20px;
+    padding: 4px 14px 4px 10px;
+    background: transparent;
+    transition: background 0.2s;
+}
+.blogs-pill:hover { background: rgba(212,175,55,0.2); }
+.blogs-pill i { color: var(--gold); font-size: 12px; }
+.blogs-pill span {
+    font-size: var(--font-xs);
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--gold);
+}
+
 </style>
 </head>
 
@@ -461,8 +482,12 @@
 <!-- WORK AT A GLANCE HEADER -->
 <div class="glance-header">
     <div class="impact-title">WORK AT A GLANCE</div>
-    <div id="swipe-more" style="font-size:var(--font-xs);"></div>
+    <a class="blogs-pill" href="blogs.html">
+        <i class="fa-solid fa-pen-nib"></i>
+        <span>View My Blogs</span>
+    </a>
 </div>
+<div id="swipe-more" style="font-size:var(--font-xs);"></div>
 
 <!-- CAROUSEL SECTION -->
 <div class="carousel-section">
@@ -634,7 +659,7 @@ function updateSwipe() {
     if (!track || !counter) return;
     track.style.transform = `translateX(${-currentCard * 100}%)`;
     counter.textContent = (currentCard + 1) + ' / ' + allCards.length;
-    if (more) {
+    if (more && window.innerWidth <= 700) {
         const section = allCards[currentCard].section;
         const links  = { growth: 'gtm.html', solution: 'solution.html', delivery: 'delivery.html' };
         const labels = { growth: 'Growth',   solution: 'Solution',      delivery: 'Delivery' };
