@@ -19,7 +19,6 @@ function buildCard(card) {
 
 let desktopPage = 0;
 
-const isTablet = () => window.innerWidth >= 701 && window.innerWidth <= 1024;
 const isMobileLandscape = () => window.innerWidth > 700 && window.innerHeight <= 500;
 
 function renderDesktop() {
@@ -39,18 +38,11 @@ let mobileCard = 0;
 function buildMobileCards() {
     const track = document.getElementById('mobile-track');
     if (!track) return;
-    track.innerHTML = '';
-    cards.forEach(card => {
-        const div = document.createElement('div');
-        div.className = 'sub-card';
-        div.style.cssText = 'min-width:100%;max-width:100%;flex-shrink:0;box-sizing:border-box;';
-        div.innerHTML = `<h3>${card.title}</h3>
-            <div class="sub-mandate">Mandate: ${card.mandate}</div>
-            <div class="sub-narrative">${card.narrative}</div>
-            <ul>${card.bullets.map(b => `<li>${b}</li>`).join('')}</ul>
-            <div class="sub-outcome">${card.outcome}</div>`;
-        track.appendChild(div);
-    });
+    track.innerHTML = cards.map(card => {
+        const html = buildCard(card);
+        // C1: swap the inline cssText that used to live here for a proper CSS class
+        return html.replace('class="sub-card"', 'class="sub-card sub-swipe-card"');
+    }).join('');
     updateMobile();
 }
 

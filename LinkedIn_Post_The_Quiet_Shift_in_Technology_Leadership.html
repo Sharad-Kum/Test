@@ -4,192 +4,92 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The Quiet Shift in Technology Leadership | Sharad Kumar</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=DM+Sans:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-<style>
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html, body { margin: 0; padding: 0; background: #080b0f; font-family: 'DM Sans', sans-serif; color: #f0f0f0; }
-html { height: 100%; }
-body { display: flex; flex-direction: column; align-items: center; min-height: 100vh; height: 100vh; max-height: 100vh; overflow: hidden; padding: 10px 8px; gap: 8px; box-sizing: border-box; }
-.lh { width: 100%; max-width: 716px; flex-shrink: 0; display: flex; align-items: center; justify-content: space-between; padding: 10px 16px; border: 1px solid rgba(201,168,76,0.25); background: #0d1117; border-radius: 8px; }
-.lh-name { font-size: 15px; font-weight: 700; letter-spacing: 2px; color: #f0f0f0; }
-.lh-tag { font-family: 'DM Mono', monospace; font-size: 8px; letter-spacing: 0.1em; color: #c9a84c; margin-top: 3px; }
-.carousel-row { width: 100%; max-width: 716px; flex: 1; min-height: 0; display: flex; align-items: stretch; }
-.pillar { width: 48px; min-width: 48px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; background: rgba(201,168,76,0.06); border: 1px solid rgba(201,168,76,0.25); color: #c9a84c; font-size: 22px; text-decoration: none; cursor: pointer; transition: background 0.2s; user-select: none; }
-.pillar:hover { background: rgba(201,168,76,0.15); }
-.pillar.left  { border-right: none; border-radius: 8px 0 0 8px; }
-.pillar.right { border-left: none; border-radius: 0 8px 8px 0; }
-.card-window { flex: 1; overflow-y: auto; border: 1px solid rgba(201,168,76,0.25); background: #0d1117; scrollbar-width: thin; scrollbar-color: rgba(201,168,76,0.25) transparent; }
-.card-window::-webkit-scrollbar { width: 4px; }
-.card-window::-webkit-scrollbar-thumb { background: rgba(201,168,76,0.25); border-radius: 2px; }
-.top-rule { height: 3px; background: linear-gradient(90deg, #e05a1e, #c9a84c, #e05a1e); }
-.bottom-rule { height: 3px; background: linear-gradient(90deg, #e05a1e, #c9a84c, #e05a1e); }
-
-  .header { padding: 22px 32px 16px; border-bottom: 1px solid rgba(201,168,76,0.2); }
-  .headline { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 900; color: #f0f0f0; line-height: 1.2; letter-spacing: -0.01em; margin-bottom: 6px; }
-  .headline em { font-style: italic; color: #c9a84c; }
-  .tagline { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.14em; color: #f0f0f0; margin-bottom: 12px; }
-  .subhead { font-size: 13px; color: #f0f0f0; line-height: 1.65; }
-  .pull-quote { margin: 0 32px; padding: 14px 0; border-bottom: 1px solid rgba(201,168,76,0.2); display: flex; gap: 14px; }
-  .bar { width: 3px; background: #c9a84c; flex-shrink: 0; border-radius: 2px; }
-  .pull-quote p { font-family: 'Playfair Display', serif; font-size: 13px; font-style: italic; color: #f0f0f0; line-height: 1.7; }
-  .pull-quote p strong { font-style: normal; font-weight: 700; }
-  .section-label { font-family: 'DM Mono', monospace; font-size: 8px; letter-spacing: 0.16em; text-transform: uppercase; color: #c9a84c; padding: 14px 32px 6px; }
-  .exemplar { padding: 14px 32px; border-top: 1px solid rgba(201,168,76,0.2); display: grid; grid-template-columns: 30px 1fr; gap: 0 12px; align-items: start; }
-  .exemplar:last-of-type { border-bottom: 1px solid rgba(201,168,76,0.2); }
-  .flag-col { display: flex; flex-direction: column; align-items: center; gap: 3px; padding-top: 2px; }
-  .flag { font-size: 17px; line-height: 1; }
-  .geo-tag { font-family: 'DM Mono', monospace; font-size: 6px; letter-spacing: 0.1em; color: #f0f0f0; text-transform: uppercase; }
-  .org-name { font-size: 13.5px; font-weight: 600; color: #f0f0f0; margin-bottom: 6px; }
-  .sector-tag { font-family: 'DM Mono', monospace; font-size: 7px; letter-spacing: 0.1em; text-transform: uppercase; color: #c9a84c; margin-bottom: 6px; }
-  .metrics { display: flex; flex-direction: column; gap: 4px; }
-  .metric-line { font-size: 12px; color: #f0f0f0; line-height: 1.55; padding-left: 16px; position: relative; }
-  .metric-line::before { content: '→'; position: absolute; left: 0; color: #c9a84c; font-size: 10px; }
-  .metric-line strong { color: #c9a84c; font-weight: 600; }
-  .org-insight { display: inline-block; margin-top: 7px; font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.06em; color: #0d1117; background: #c9a84c; padding: 3px 10px; font-weight: 500; }
-  .shift-block { margin: 14px 32px; background: #161b22; border: 1px solid rgba(201,168,76,0.25); padding: 14px 20px; }
-  .shift-label { font-family: 'DM Mono', monospace; font-size: 8px; letter-spacing: 0.14em; color: #c9a84c; margin-bottom: 10px; }
-  .shift-compare { display: grid; grid-template-columns: 1fr 26px 1fr; align-items: center; }
-  .shift-col { padding: 9px 11px; }
-  .shift-col.then { border: 1px solid rgba(255,255,255,0.08); }
-  .shift-col.now { border: 1px solid #c9a84c; background: rgba(201,168,76,0.12); }
-  .shift-era { font-family: 'DM Mono', monospace; font-size: 7px; letter-spacing: 0.2em; text-transform: uppercase; color: #f0f0f0; opacity: 0.4; margin-bottom: 5px; }
-  .shift-col.now .shift-era { color: #c9a84c; opacity: 1; }
-  .shift-q { font-size: 11px; font-style: italic; color: #f0f0f0; line-height: 1.5; }
-  .shift-col.now .shift-q { font-weight: 500; font-style: normal; }
-  .arrow-mid { text-align: center; color: #c9a84c; font-size: 15px; }
-  .impact-block { margin: 14px 32px; background: #161b22; border: 1px solid rgba(201,168,76,0.25); padding: 14px 20px; }
-  .impact-label { font-family: 'DM Mono', monospace; font-size: 8px; letter-spacing: 0.14em; color: #c9a84c; margin-bottom: 10px; }
-  .impact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
-  .impact-item { padding: 10px 12px; border: 1px solid rgba(201,168,76,0.25); background: #0d1117; }
-  .impact-stat { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; color: #c9a84c; line-height: 1; margin-bottom: 4px; }
-  .impact-desc { font-size: 10px; color: #f0f0f0; line-height: 1.5; }
-  .layer-block { margin: 0 32px; padding: 14px 0; border-top: 1px solid rgba(201,168,76,0.2); }
-  .layer-block:last-of-type { border-bottom: 1px solid rgba(201,168,76,0.2); }
-  .layer-header { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
-  .layer-pill { font-family: 'DM Mono', monospace; font-size: 8px; letter-spacing: 0.1em; text-transform: uppercase; color: #0d1117; background: #c9a84c; padding: 3px 10px; font-weight: 500; }
-  .layer-desc { font-size: 12px; color: #f0f0f0; line-height: 1.55; }
-  .tool-list { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 8px; }
-  .tool { font-family: 'DM Mono', monospace; font-size: 8px; letter-spacing: 0.06em; color: #c9a84c; border: 1px solid rgba(201,168,76,0.25); padding: 2px 8px; background: rgba(201,168,76,0.12); }
-  .timeline { margin: 0 32px; border-top: 1px solid rgba(201,168,76,0.2); }
-  .timeline-row { display: grid; grid-template-columns: 72px 1fr; gap: 0 16px; padding: 12px 0; border-bottom: 1px solid rgba(201,168,76,0.2); align-items: start; }
-  .era { font-family: 'DM Mono', monospace; font-size: 7px; letter-spacing: 0.16em; text-transform: uppercase; color: #c9a84c; padding-top: 2px; }
-  .era-desc { font-size: 12px; color: #f0f0f0; line-height: 1.6; }
-  .era-desc strong { color: #c9a84c; font-weight: 600; }
-  .forces { margin: 14px 32px; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; }
-  .force-item { background: #161b22; border: 1px solid rgba(201,168,76,0.25); padding: 12px; }
-  .force-label { font-family: 'DM Mono', monospace; font-size: 7px; letter-spacing: 0.12em; text-transform: uppercase; color: #c9a84c; margin-bottom: 6px; }
-  .force-text { font-size: 11px; color: #f0f0f0; line-height: 1.55; }
-  .spotlight { margin: 0 32px 14px; background: #161b22; border: 1px solid #c9a84c; padding: 14px 18px; }
-  .spotlight-label { font-family: 'DM Mono', monospace; font-size: 7px; letter-spacing: 0.16em; text-transform: uppercase; color: #c9a84c; margin-bottom: 8px; }
-  .spotlight-org { font-size: 13.5px; font-weight: 600; color: #f0f0f0; margin-bottom: 4px; }
-  .spotlight-text { font-size: 12px; color: #f0f0f0; line-height: 1.65; }
-  .spotlight-text strong { color: #c9a84c; font-weight: 600; }
-  .closing { padding: 14px 32px; border-top: 1px solid rgba(201,168,76,0.2); }
-  .closing-text { font-size: 12.5px; color: #f0f0f0; line-height: 1.75; margin-bottom: 14px; }
-  .closing-text strong { color: #f0f0f0; font-weight: 600; }
-  .series-note { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.08em; color: #c9a84c; border-left: 2px solid #c9a84c; padding-left: 10px; margin-bottom: 14px; line-height: 1.6; }
-  .tags { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 14px; }
-  .tag { font-family: 'DM Mono', monospace; font-size: 8px; letter-spacing: 0.07em; color: #c9a84c; border: 1px solid rgba(201,168,76,0.35); padding: 2px 8px; }
-
-.footer-strip { width: 100%; max-width: 716px; flex-shrink: 0; display: flex; justify-content: space-between; align-items: center; border: 1px solid rgba(201,168,76,0.25); border-radius: 8px; background: #0d1117; padding: 10px 28px; }
-.footer-item { display: flex; flex-direction: column; align-items: center; gap: 4px; text-decoration: none; flex: 1; transition: opacity 0.2s; }
-.footer-item:hover { opacity: 0.7; }
-.footer-item i { font-size: 18px; color: #c9a84c; }
-.footer-item span { font-family: 'DM Mono', monospace; font-size: 8px; letter-spacing: 1px; text-transform: uppercase; color: #8b949e; text-align: center; white-space: nowrap; }
-@media (max-width: 600px) {
-  html, body { overflow: auto; height: auto; min-height: unset; max-height: unset; }
-  .pillar { width: 28px; min-width: 28px; font-size: 14px; }
-  .footer-strip { padding: 8px 12px; }
-  .footer-item span { font-size: 6px; letter-spacing: 0.5px; }
-  .footer-item i { font-size: 15px; }
-}
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
-<body>
-<div class="lh">
+<body class="blog-page">
+<div class="blog-lh">
   <div>
-    <div class="lh-name">SHARAD KUMAR</div>
-    <div class="lh-tag">Operating at the intersection of Markets, Technology and Delivery</div>
+    <div class="blog-lh-name">SHARAD KUMAR</div>
+    <div class="blog-lh-tag">Operating at the intersection of Markets, Technology and Delivery</div>
   </div>
   <svg viewBox="0 0 120 120" width="50" height="50" style="flex-shrink:0;">
     <defs><path id="arc7" d="M 15,60 A 45,45 0 0,0 105,60"/></defs>
     <image href="logo.png" x="20" y="15" width="80" height="80" style="filter:brightness(2.5) saturate(3) hue-rotate(5deg);"/>
-    <text font-size="11" fill="#c9a84c" font-family="Segoe UI,sans-serif" font-weight="500" letter-spacing="2">
+    <text font-size="11" style="fill:var(--clay);font-family:var(--font-body);" font-weight="500" letter-spacing="2">
       <textPath href="#arc7">Addicted to Results</textPath>
     </text>
   </svg>
 </div>
-<div class="carousel-row">
-  <a class="pillar left"  href="LinkedIn_Post_The_Expanding_Role_of_Technology_Leaders.html" title="The Expanding Role of Technology Leaders">&#8592;</a>
-  <div class="card-window">
-    <div class="top-rule"></div>
-    <div class="header">
-    <h1 class="headline">The Quiet Shift in <em>Technology Leadership</em></h1>
-    <div class="tagline"><em>An observation from the intersection of technology, solutions and markets</em></div>
-    <p class="subhead">Technology leaders are no longer defined only by delivery ownership. Increasingly, they are shaping — and expected to shape — product direction and market strategy.</p>
+<div class="blog-carousel-row">
+  <a class="blog-pillar left"  href="LinkedIn_Post_The_Expanding_Role_of_Technology_Leaders.html" title="The Expanding Role of Technology Leaders">&#8592;</a>
+  <div class="blog-card-window">
+    <div class="blog-top-rule"></div>
+    <div class="blog-header">
+    <h1 class="blog-headline">The Quiet Shift in <em>Technology Leadership</em></h1>
+    <div class="blog-tagline"><em>An observation from the intersection of technology, solutions and markets</em></div>
+    <p class="blog-subhead">Technology leaders are no longer defined only by delivery ownership. Increasingly, they are shaping — and expected to shape — product direction and market strategy.</p>
   </div>
 
-  <div class="pull-quote">
-    <div class="bar"></div>
+  <div class="blog-pull-quote">
+    <div class="blog-bar"></div>
     <p>What began as an operational mandate for stability and delivery is steadily evolving into something <strong>far more strategic.</strong></p>
   </div>
 
-  <div class="section-label"><em>How the mandate has evolved</em></div>
+  <div class="blog-section-label"><em>How the mandate has evolved</em></div>
 
-  <div class="timeline">
-    <div class="timeline-row">
-      <div class="era">Then</div>
-      <div class="era-desc">Ensure systems remain stable. Deliver on time. Maintain predictable execution. If systems ran reliably, <strong>expectations were met.</strong></div>
+  <div class="blog-timeline">
+    <div class="blog-timeline-row">
+      <div class="blog-era">Then</div>
+      <div class="blog-era-desc">Ensure systems remain stable. Deliver on time. Maintain predictable execution. If systems ran reliably, <strong>expectations were met.</strong></div>
     </div>
-    <div class="timeline-row">
-      <div class="era">Now</div>
-      <div class="era-desc">Shaping solutions. Influencing delivery models. Driving transformation agendas. Determining how organisations <strong>take their offerings to market.</strong></div>
+    <div class="blog-timeline-row">
+      <div class="blog-era">Now</div>
+      <div class="blog-era-desc">Shaping solutions. Influencing delivery models. Driving transformation agendas. Determining how organisations <strong>take their offerings to market.</strong></div>
     </div>
-    <div class="timeline-row">
-      <div class="era">Emerging</div>
-      <div class="era-desc">Technology as a <strong>core strategic capability</strong> — contributing directly to solution innovation, product evolution, and market positioning.</div>
+    <div class="blog-timeline-row">
+      <div class="blog-era">Emerging</div>
+      <div class="blog-era-desc">Technology as a <strong>core strategic capability</strong> — contributing directly to solution innovation, product evolution, and market positioning.</div>
     </div>
   </div>
 
-  <div class="section-label"><em>Three forces compounding the shift</em></div>
+  <div class="blog-section-label"><em>Three forces compounding the shift</em></div>
 
-  <div class="forces">
-    <div class="force-item">
-      <div class="force-label">Geopolitics</div>
-      <div class="force-text">Digital sovereignty is a priority. Nations view technological capability as a strategic asset.</div>
+  <div class="blog-forces">
+    <div class="blog-force-item">
+      <div class="blog-force-label">Geopolitics</div>
+      <div class="blog-force-text">Digital sovereignty is a priority. Nations view technological capability as a strategic asset.</div>
     </div>
-    <div class="force-item">
-      <div class="force-label">Market Dynamics</div>
-      <div class="force-text">New avenues for partnerships and localisation alongside regulatory boundaries and shifting alliances.</div>
+    <div class="blog-force-item">
+      <div class="blog-force-label">Market Dynamics</div>
+      <div class="blog-force-text">New avenues for partnerships and localisation alongside regulatory boundaries and shifting alliances.</div>
     </div>
-    <div class="force-item">
-      <div class="force-label">AI Acceleration</div>
-      <div class="force-text">Compressing timelines and raising the stakes for how leadership is defined and exercised.</div>
+    <div class="blog-force-item">
+      <div class="blog-force-label">AI Acceleration</div>
+      <div class="blog-force-text">Compressing timelines and raising the stakes for how leadership is defined and exercised.</div>
     </div>
-  </div>
-
-  <div class="spotlight">
-    <div class="spotlight-label">Leadership in practice · Nvidia</div>
-    <div class="spotlight-org">Jensen Huang — Engineering decisions as market narrative</div>
-    <div class="spotlight-text">GPU and AI platform decisions have not remained internal technology choices — they have become <strong>central to the company's product ecosystem and global market positioning.</strong> A defining example of technology leadership becoming business leadership.</div>
-    <div class="org-insight">Engineering choices became market strategy</div>
   </div>
 
-  <div class="closing">
-    <div class="series-note">Over the coming weeks — how technology leadership, delivery transformation, and go-to-market are evolving together in an AI-enabled, geopolitically complex world.</div>
-    <p class="closing-text">The organisations that will lead are those where technology leadership contributes directly to solution innovation, product evolution, and strategic positioning — <strong>not just execution.</strong> Technology leadership is steadily becoming business leadership.</p>
+  <div class="blog-spotlight">
+    <div class="blog-spotlight-label">Leadership in practice · Nvidia</div>
+    <div class="blog-spotlight-org">Jensen Huang — Engineering decisions as market narrative</div>
+    <div class="blog-spotlight-text">GPU and AI platform decisions have not remained internal technology choices — they have become <strong>central to the company's product ecosystem and global market positioning.</strong> A defining example of technology leadership becoming business leadership.</div>
   </div>
-    <div class="bottom-rule"></div>
+
+  <div class="blog-closing">
+    <div class="blog-series-note">Over the coming weeks — how technology leadership, delivery transformation, and go-to-market are evolving together in an AI-enabled, geopolitically complex world.</div>
+    <p class="blog-closing-text">The organisations that will lead are those where technology leadership contributes directly to solution innovation, product evolution, and strategic positioning — <strong>not just execution.</strong> Technology leadership is steadily becoming business leadership.</p>
   </div>
-  <a class="pillar right" href="LinkedIn_Post_The_Real_Constraint_in_Transformation.html" title="The Real Constraint in Transformation">&#8594;</a>
+    <div class="blog-bottom-rule"></div>
+  </div>
+  <a class="blog-pillar right" href="LinkedIn_Post_The_Real_Constraint_in_Transformation.html" title="The Real Constraint in Transformation">&#8594;</a>
 </div>
-<div class="footer-strip">
-  <a class="footer-item" href="https://www.linkedin.com/in/sharad-kumar-11264247" target="_blank"><i class="fa-brands fa-linkedin"></i><span>Connect</span></a>
-  <a class="footer-item" href="mailto:sharad.rsg@gmail.com?subject=Connect with Sharad"><i class="fa-solid fa-envelope"></i><span>E-Mail</span></a>
-  <a class="footer-item" href="index.html"><i class="fa-solid fa-house"></i><span>Home</span></a>
-  <a class="footer-item" href="https://calendly.com/sharad-kumar-ms/strategic-connect" target="_blank"><i class="fa-solid fa-calendar-days"></i><span>Schedule</span></a>
-  <a class="footer-item" href="https://www.linkedin.com/in/sharad-kumar-11264247" target="_blank"><i class="fa-brands fa-linkedin-in"></i><span>Follow</span></a>
+<div class="blog-footer">
+  <a class="blog-footer-item" href="https://www.linkedin.com/in/sharad-kumar-11264247" target="_blank"><i class="fa-brands fa-linkedin"></i><span>Connect</span></a>
+  <a class="blog-footer-item" href="mailto:sharad.rsg@gmail.com?subject=Connect with Sharad"><i class="fa-solid fa-envelope"></i><span>E-Mail</span></a>
+  <a class="blog-footer-item" href="index.html"><i class="fa-solid fa-house"></i><span>Home</span></a>
+  <a class="blog-footer-item" href="https://calendly.com/sharad-kumar-ms/strategic-connect" target="_blank"><i class="fa-solid fa-calendar-days"></i><span>Schedule</span></a>
+  <a class="blog-footer-item" href="blogs.html"><i class="fa-solid fa-list"></i><span>All Blogs</span></a>
 </div>
 </body>
 </html>

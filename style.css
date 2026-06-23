@@ -208,15 +208,6 @@ h1 {
     margin-bottom: 8px;
 }
 
-/* Sub-page section title */
-.page-section-title {
-    font-size: var(--font-base);
-    font-weight: 600;
-    color: var(--ink);
-    padding-bottom: 6px;
-    margin: 8px 0 6px 0;
-}
-
 /* Sub-page page title — centered, prominent */
 .page-title {
     text-align: center;
@@ -295,12 +286,10 @@ h1 {
     margin: 16px 0 14px 0;
 }
 
-.page-header-row .page-section-title,
 .page-header-row .page-sub-title {
     margin: 0;
 }
 
-.page-header-row a,
 .back-to-main a {
     font-size: var(--font-sm);
     color: var(--text-link);
@@ -308,7 +297,6 @@ h1 {
     white-space: nowrap;
 }
 
-.page-header-row a:hover,
 .back-to-main a:hover {
     text-decoration: underline;
 }
@@ -321,13 +309,6 @@ h1 {
 .back-to-main a {
     font-size: var(--font-sm);
     font-weight: 500;
-}
-
-.disabled-link {
-    color: var(--text-link);
-    pointer-events: none;
-    opacity: 0.6;
-    cursor: default;
 }
 
 
@@ -460,6 +441,15 @@ h1 {
     flex: 1 1 auto;
 }
 
+/* Mobile swipe-track variant — sizing previously injected via inline
+   style.cssText in subpage.js (C1); now a proper class */
+.sub-swipe-card {
+    min-width: 100%;
+    max-width: 100%;
+    flex-shrink: 0;
+    box-sizing: border-box;
+}
+
 /* Zone 1 — Title: 1 line fixed */
 .sub-card h3 {
     color: var(--clay);
@@ -549,13 +539,8 @@ h1 {
 
 
 /* ---------------------------------------------
-   8. EXTRA / ADDITIONAL SECTION (sub-pages)
+   8. INTRO / EXTRA LIST (sub-pages)
    --------------------------------------------- */
-
-.extra-section {
-    margin-top: 10px;
-    margin-bottom: 6px;
-}
 
 .extra-list {
     list-style: none;
@@ -600,7 +585,6 @@ h1 {
 
     .extra-list li { font-size: var(--font-xs); }
 
-    .page-header-row a { display: none; }
 
     .intro-sub { margin: 2px 0 4px 0; }
 
@@ -616,7 +600,6 @@ h1 {
 @media (min-width: 1024px) {
     .sub-carousel-desktop { display: flex; }
     .sub-carousel-mobile  { display: none; }
-    .page-header-row a { display: none; }
 }
 
 /* Side blocks — desktop only */
