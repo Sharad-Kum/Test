@@ -63,7 +63,7 @@
     text-align: center;
     font-size: var(--font-xs);
     line-height: 1.2;
-    color: var(--text-primary);
+    color: var(--ink);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -74,7 +74,7 @@
 
 .box b {
     display: block;
-    color: var(--gold);
+    color: var(--clay);
     font-size: var(--font-title);
     margin-bottom: 3px;
 }
@@ -113,14 +113,14 @@
 }
 
 .carousel-col-title {
-    background: var(--gold-bg-solid);
-    border: 1px solid var(--gold-faint);
+    background: var(--clay-bg-solid);
+    border: 1px solid var(--clay-faint);
     border-bottom: none;
-    border-radius: 6px 6px 0 0;
+    border-radius: var(--radius) var(--radius) 0 0;
     padding: 8px 14px;
     font-size: var(--font-label);
     font-weight: 700;
-    color: var(--text-dark);
+    color: var(--text-on-accent);
     letter-spacing: 1px;
     text-transform: uppercase;
     text-align: center;
@@ -130,7 +130,7 @@
     background: var(--card-bg);
     border: 1px solid var(--card-border);
     border-top: none;
-    border-radius: 0 0 8px 8px;
+    border-radius: 0 0 var(--radius) var(--radius);
     padding: 14px;
     display: flex;
     flex-direction: column;
@@ -142,14 +142,14 @@
 .carousel-card-title {
     font-size: var(--font-sm);
     font-weight: 600;
-    color: var(--gold);
+    color: var(--clay);
     margin-bottom: 8px;
     line-height: 1.3;
 }
 
 .carousel-card-desc {
     font-size: var(--font-sm);
-    color: var(--text-primary);
+    color: var(--ink);
     line-height: 2.2;
     flex: 1;
     overflow: hidden;
@@ -166,8 +166,8 @@
 
 .carousel-arrow {
     background: none;
-    border: 1px solid var(--gold-faint);
-    color: var(--gold);
+    border: 1px solid var(--clay-faint);
+    color: var(--clay);
     width: 28px;
     height: 28px;
     border-radius: 50%;
@@ -180,11 +180,11 @@
     flex-shrink: 0;
 }
 
-.carousel-arrow:hover { background: rgba(212, 175, 55, 0.15); }
+.carousel-arrow:hover { background: var(--clay-hover); }
 
 .carousel-counter {
     font-size: var(--font-xs);
-    color: var(--text-muted);
+    color: var(--text-secondary);
     min-width: 30px;
     text-align: center;
 }
@@ -209,26 +209,26 @@
 .swipe-sidebar {
     width: 30px;
     min-width: 30px;
-    background: var(--gold-hover);
-    border: 1px solid var(--gold-mid);
+    background: var(--clay-hover);
+    border: 1px solid var(--clay-mid);
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    color: var(--gold);
+    color: var(--clay);
     font-size: var(--font-sm);
     user-select: none;
     flex-shrink: 0;
 }
 
-.swipe-sidebar.left  { border-radius: 8px 0 0 8px; border-right: none; }
-.swipe-sidebar.right { border-radius: 0 8px 8px 0; border-left: none; }
-.swipe-sidebar:hover { background: var(--gold-faint); }
+.swipe-sidebar.left  { border-radius: var(--radius) 0 0 var(--radius); border-right: none; }
+.swipe-sidebar.right { border-radius: 0 var(--radius) var(--radius) 0; border-left: none; }
+.swipe-sidebar:hover { background: var(--clay-faint); }
 
 .swipe-viewport {
     flex: 1;
     overflow: hidden;
-    border: 1px solid var(--gold-faint);
+    border: 1px solid var(--clay-faint);
     border-left: none;
     border-right: none;
 }
@@ -247,13 +247,13 @@
     box-sizing: border-box;
     flex-shrink: 0;
     min-height: 170px;
-    color: var(--text-primary);
+    color: var(--ink);
 }
 
 .swipe-card-section {
     font-size: var(--font-xs);
     font-weight: 700;
-    color: var(--gold-mid);
+    color: var(--clay-mid);
     letter-spacing: 1.5px;
     text-transform: uppercase;
     margin-bottom: 6px;
@@ -262,13 +262,13 @@
 .swipe-card-title {
     font-size: var(--font-sm);
     font-weight: 600;
-    color: var(--gold);
+    color: var(--clay);
     margin-bottom: 8px;
     line-height: 1.3;
 }
 
 .swipe-card-desc {
-    color: var(--text-primary);
+    color: var(--ink);
     line-height: 1.4;
     white-space: pre-line;
 }
@@ -276,7 +276,7 @@
 .swipe-counter {
     text-align: center;
     font-size: var(--font-xs);
-    color: var(--text-muted);
+    color: var(--text-secondary);
     margin-top: 8px;
 }
 
@@ -300,14 +300,14 @@
     gap: 8px;
     margin-bottom: 8px;
     font-size: var(--font-sm);
-    color: var(--text-primary);
+    color: var(--ink);
     line-height: 1.5;
 }
 
-.compact-list li span { color: var(--text-primary); }
+.compact-list li span { color: var(--ink); }
 
 .compact-list i {
-    color: var(--gold);
+    color: var(--clay);
     margin-top: 2px;
     flex-shrink: 0;
     font-size: var(--font-sm);
@@ -315,7 +315,7 @@
     text-align: center;
 }
 
-.compact-list strong { color: var(--gold); }
+.compact-list strong { color: var(--clay); }
 
 /* --- Engage with Me icons --- */
 .engage-icons {
@@ -342,18 +342,18 @@
 .engage-icons a i {
     width: 18px;
     font-size: var(--font-base);
-    color: var(--gold);
+    color: var(--clay);
     text-align: center;
     flex-shrink: 0;
 }
 
 .engage-icons a span {
     font-size: var(--font-xs);
-    color: var(--text-primary);
+    color: var(--ink);
 }
 
-/* --- Compact overrides (≤700px) --- */
-@media (max-width: 700px) {
+/* --- Compact overrides (≤1023px) --- */
+@media (max-width: 1023px) {
 
     /* Impact: dissolve rows, parent becomes 3-col grid */
     .impact {
@@ -396,8 +396,8 @@
     }
 }
 
-/* --- Wide overrides (≥701px) --- */
-@media (min-width: 701px) {
+/* --- Wide overrides (≥1024px) --- */
+@media (min-width: 1024px) {
     .carousel-desktop { display: grid; }
     .carousel-mobile  { display: none; }
     #swipe-more { display: none; }
@@ -413,20 +413,20 @@
     align-items: center;
     gap: 6px;
     text-decoration: none;
-    border: 1px solid var(--gold-faint);
-    border-radius: 20px;
+    border: 1px solid var(--clay-faint);
+    border-radius: var(--radius);
     padding: 4px 14px 4px 10px;
     background: transparent;
     transition: background 0.2s;
 }
-.blogs-pill:hover { background: rgba(212,175,55,0.2); }
-.blogs-pill i { color: var(--gold); font-size: 12px; }
+.blogs-pill:hover { background: var(--clay-hover); }
+.blogs-pill i { color: var(--clay); font-size: 12px; }
 .blogs-pill span {
     font-size: var(--font-xs);
     font-weight: 600;
     letter-spacing: 1px;
     text-transform: uppercase;
-    color: var(--gold);
+    color: var(--clay);
 }
 
 </style>
@@ -451,7 +451,7 @@
                 <path id="bottom-arc" d="M 15,60 A 45,45 0 0,0 105,60"/>
             </defs>
             <image href="logo.png" x="20" y="15" width="80" height="80" style="filter: brightness(2.5) saturate(3) hue-rotate(5deg);"/>
-            <text font-size="11" fill="#d4af37" font-family="Segoe UI, sans-serif" font-weight="500" letter-spacing="2">
+            <text font-size="11" style="fill:var(--clay);font-family:var(--font-body);" font-weight="500" letter-spacing="2">
                 <textPath href="#bottom-arc">Addicted to Results</textPath>
             </text>
         </svg>
@@ -571,7 +571,7 @@
         <div class="section-title">ENGAGE WITH ME</div>
         <div class="engage-icons">
             <a href="mailto:sharad.rsg@gmail.com?subject=Connect with Sharad">
-                <i class="fa-solid fa-envelope" style="color:var(--gold);"></i>
+                <i class="fa-solid fa-envelope" style="color:var(--clay);"></i>
                 <span>E-mail</span>
             </a>
             <a href="https://www.linkedin.com/in/sharad-kumar-11264247" target="_blank">
@@ -659,7 +659,7 @@ function updateSwipe() {
     if (!track || !counter) return;
     track.style.transform = `translateX(${-currentCard * 100}%)`;
     counter.textContent = (currentCard + 1) + ' / ' + allCards.length;
-    if (more && window.innerWidth <= 700) {
+    if (more && window.innerWidth <= 1023) {
         const section = allCards[currentCard].section;
         const links  = { growth: 'gtm.html', solution: 'solution.html', delivery: 'delivery.html' };
         const labels = { growth: 'Growth',   solution: 'Solution',      delivery: 'Delivery' };
