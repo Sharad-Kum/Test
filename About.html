@@ -16,6 +16,7 @@
     display: flex;
     flex-direction: column;
     height: 100vh;
+    height: 100dvh;
     overflow: hidden;
     max-width: 1400px;
     margin: 0 auto;
@@ -38,7 +39,7 @@
     font-size: var(--font-title);
     font-weight: 600;
     line-height: 1.6;
-    color: var(--text-primary);
+    color: var(--ink);
     letter-spacing: 0.3px;
     max-width: 860px;
     margin: 6px auto 14px auto;
@@ -53,31 +54,31 @@
 .about-para {
     font-size: var(--font-sm);
     line-height: 1.8;
-    color: var(--text-primary);
+    color: var(--ink);
     margin: 0 0 10px 0;
 }
 
 /* Gold keyword accent */
-.g { color: var(--gold); font-weight: 600; }
+.g { color: var(--clay); font-weight: 600; }
 
-/* Italic weight for salvage line — no new colour */
-.at-risk { font-weight: 600; font-style: italic; }
+/* Italic weight for salvage line — now matches tagline accent per client request */
+.at-risk { font-weight: 600; font-style: italic; color: var(--clay); }
 
-/* Subtle gold separator */
+/* Subtle gold separator — now used only above the signature line */
 .gold-rule {
     border: none;
-    border-top: 1px solid var(--gold-faint-dim);
-    margin: 10px auto;
+    border-top: 1px solid var(--clay-faint-dim);
+    margin: 14px auto;
     max-width: 860px;
 }
 
 /* Closing gold statement */
 .closing-statement {
     max-width: 860px;
-    margin: 8px auto 0 auto;
+    margin: 0 auto;
     font-size: var(--font-sm);
     line-height: 1.8;
-    color: var(--gold);
+    color: var(--clay);
     font-style: italic;
 }
 
@@ -88,7 +89,7 @@
     align-items: center;
     justify-content: space-evenly;
     padding: 10px 0;
-    border-top: 1px solid var(--gold-faint);
+    border-top: 1px solid var(--clay-faint);
     margin-top: 8px;
 }
 
@@ -98,7 +99,7 @@
     align-items: center;
     gap: 4px;
     text-decoration: none;
-    color: var(--text-primary);
+    color: var(--ink);
     transition: opacity 0.2s;
 }
 
@@ -109,14 +110,14 @@
     font-size: var(--font-xs);
     letter-spacing: 1px;
     text-transform: uppercase;
-    color: var(--text-muted);
+    color: var(--text-secondary);
 }
 
 /* Compact — unlock scroll, strip stays sticky */
 @media (max-width: 1023px) {
     .about-frame  { height: auto; overflow: visible; padding-bottom: 0; }
     .about-scroll { overflow-y: visible; }
-    .connect-strip { position: sticky; bottom: 0; background: #050d14; padding: 10px var(--pad-page); }
+    .connect-strip { position: sticky; bottom: 0; background: var(--bg); padding: 10px var(--pad-page); }
     .belief { font-size: var(--font-base); }
 }
 </style>
@@ -137,8 +138,8 @@
         <div class="side-block">
             <svg viewBox="0 0 120 120" width="80" height="80">
                 <defs><path id="bottom-arc" d="M 15,60 A 45,45 0 0,0 105,60"/></defs>
-                <image href="logo.png" x="20" y="15" width="80" height="80" style="filter: brightness(2.5) saturate(3) hue-rotate(5deg);"/>
-                <text font-size="11" fill="#d4af37" font-family="Segoe UI, sans-serif" font-weight="500" letter-spacing="2">
+                <image href="logo.png" x="20" y="15" width="80" height="80"/>
+                <text font-size="12" style="fill:var(--clay);font-family:var(--font-body);" font-weight="700" letter-spacing="2">
                     <textPath href="#bottom-arc">Addicted to Results</textPath>
                 </text>
             </svg>
@@ -148,43 +149,41 @@
     <!-- SCROLLABLE NARRATIVE -->
     <div class="about-scroll">
 
-        <p class="belief">I architect intelligent, scalable organisations where <span class="g">GTM ambition, technology capability and delivery outcomes operate as one</span> — enabling enterprises to compete and grow in an AI-embedded world.</p>
+        <p class="belief">I architect <span class="g">AI-enabled</span>, intelligent and scalable organisations where <span class="g">Go-To-Market ambition, integrated solutions and delivery outcomes operate as one</span> — enabling enterprises to stay ahead of the relevancy curve.</p>
 
         <div class="about-body">
 
             <!-- PARA 1 — Who + timeline, standalone -->
             <p class="about-para"><span class="g">Three decades</span> across <span class="g">Accenture, Capgemini, Tech Mahindra, Wipro</span> and <span class="g">HCL</span> — and in recent years working with enterprises and start-ups as advisor, consultant and full-time employee — operating across <span class="g">Americas, UK &amp; Europe, ANZ</span> and <span class="g">ASEAN</span>. Three things have remained consistent: owning <span class="g">GTM</span> motions for growth, translating technology into commercially viable enterprise <span class="g">Solutions</span>, and building <span class="g">Delivery</span> organisations at scale — while repeatedly being brought in to <span class="at-risk">salvage at-risk red-flagged portfolios, solutions and business units</span>, rebuilding stakeholder confidence and creating a credible path toward scalable growth.</p>
 
-            <hr class="gold-rule">
-
             <!-- PARA 2 + 3 — GTM flows into delivery -->
             <p class="about-para">The GTM work has spanned pipeline development, opportunity qualification, techno-commercial solution shaping, RFI/RFP/RFQ responses and stakeholder engagement — owning the bridge between client ambition, commercial viability and delivery credibility. Consistently <span class="g">65%+ win rates</span>. Led <span class="g">ELA negotiations</span> and joint-GTM strategies with <span class="g">HP, IBM</span> and <span class="g">CA Technologies</span> and regional providers to often turn competitive landscapes into strategic partnerships across <span class="g">IT, Cloud and Digital Transformation</span>.</p>
 
             <p class="about-para">On delivery — scaled a <span class="g">34 FTE pilot to 425 FTE</span> global Delivery CoE across 7 business lines in 18 months at Accenture. Built a <span class="g">SaaS-enabled DevOps practice to $20M</span> in Year 1 at Tech Mahindra. Led cloud migration solution strategy for <span class="g">6,000+ applications</span> at Capgemini — across industrial technology, automation, mobility and healthcare. Throughout, the methodology evolution tracked from <span class="g">Empirical → Agile → DevOps</span>, with <span class="g">AI, ML and NLP</span> increasingly embedded into how solutions are architected and delivered.</p>
 
-            <hr class="gold-rule">
-
             <!-- PARA 4 — Thought leadership, standalone -->
             <p class="about-para">The thought leadership thread has run parallel — co-authoring a globally published <span class="g">Testing Practitioners' Handbook</span>, authoring whitepapers and process handbooks across DevOps, Quality Engineering and Delivery Governance, and representing organisations as plenary keynote speaker and jury member at national and international forums and with the analyst community.</p>
 
-            <hr class="gold-rule">
-
-            <!-- PARA 5 + signature — integrated -->
+            <!-- PARA 5 — last paragraph -->
             <p class="about-para">Across all of these — the pattern across <span class="g">Industries, Markets and Customers</span> has remained consistent. Process exists. Systems exist. Data exists. The need has always been connecting these layers intelligently, minimising human intervention in every procedural handoff, yet delivering predictable and trustworthy outcomes.</p>
 
-            <p class="closing-statement">Technology creates possibility. Adoption happens only when that capability is translated into what the business actually needs to hear. The articulation between capability and outcome is where engagements are won or lost — and where delivery either holds or fractures.</p>
-
         </div>
+
+        <!-- SIGNATURE — separator lives only here, between last paragraph and POV -->
+        <hr class="gold-rule">
+
+        <p class="closing-statement">Technology creates possibility. Adoption happens only when that capability is translated into what the business actually needs to hear.<br>The articulation between capability and outcome is where engagements are won or lost — and where delivery either holds or fractures.</p>
+
     </div>
 
     <!-- CONNECT STRIP -->
     <div class="connect-strip">
         <a href="index.html">
-            <i class="fa-solid fa-briefcase" style="color:var(--gold);"></i>
+            <i class="fa-solid fa-briefcase" style="color:var(--clay);"></i>
             <span>My Work</span>
         </a>
         <a href="blogs.html">
-            <i class="fa-solid fa-pen-nib" style="color:var(--gold);"></i>
+            <i class="fa-solid fa-pen-nib" style="color:var(--clay);"></i>
             <span>My Blogs</span>
         </a>
         <a href="https://www.linkedin.com/in/sharad-kumar-11264247" target="_blank">
@@ -192,12 +191,12 @@
             <span>LinkedIn</span>
         </a>
         <a href="mailto:sharad.rsg@gmail.com?subject=Connect with Sharad">
-            <i class="fa-solid fa-envelope" style="color:var(--gold);"></i>
+            <i class="fa-solid fa-envelope" style="color:var(--clay);"></i>
             <span>E-Mail</span>
         </a>
         <a href="https://calendly.com/sharad-kumar-ms/strategic-connect" target="_blank">
             <i class="fa-solid fa-calendar-check" style="color:#006BFF;"></i>
-            <span>Book a Call</span>
+            <span>Book my Calendar</span>
         </a>
     </div>
 
