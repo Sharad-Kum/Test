@@ -642,7 +642,10 @@ h1 {
    12. BLOG POST PAGES
    --------------------------------------------- */
 
-/* Page frame — viewport locked, only card-window scrolls */
+/* Page frame — viewport locked, only card-window scrolls.
+   100dvh (with 100vh fallback) accounts for the mobile browser's
+   collapsing address bar — 100vh alone sits below the visible
+   viewport until the user scrolls, which was hiding the footer. */
 .blog-page {
     display: flex;
     flex-direction: column;
@@ -650,6 +653,9 @@ h1 {
     min-height: 100vh;
     height: 100vh;
     max-height: 100vh;
+    min-height: 100dvh;
+    height: 100dvh;
+    max-height: 100dvh;
     overflow: hidden;
     padding: 10px 8px;
     gap: 8px;
