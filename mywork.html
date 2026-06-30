@@ -17,420 +17,6 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 
-<style>
-/* =============================================
-   INDEX-SPECIFIC STYLES ONLY
-   Everything in style.css is already inherited.
-   This block covers: impact boxes, carousel
-   columns, bottom grid, engage icons.
-   ============================================= */
-
-/* --- Intro paragraph --- */
-.intro {
-    text-align: center;
-    max-width: 1100px;
-    margin: 0 auto 8px auto;
-    font-size: var(--font-sm);
-    line-height: 1.4;
-}
-
-/* --- Impact Snapshot --- */
-.impact {
-    text-align: center;
-    margin: 8px auto 10px auto;
-}
-
-.impact-title {
-    font-size: var(--font-title);
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
-/* Wide default: two flex rows */
-.impact-row {
-    display: flex;
-    justify-content: center;
-    gap: var(--gap);
-    margin-bottom: 6px;
-    flex-wrap: wrap;
-}
-
-.box {
-    border: 1px solid var(--card-border);
-    background-color: var(--card-bg);
-    border-radius: var(--radius);
-    padding: 8px 10px;
-    text-align: center;
-    font-size: var(--font-xs);
-    line-height: 1.2;
-    color: var(--ink);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    flex: 1 1 120px;
-    max-width: 180px;
-    min-height: 50px;
-}
-
-.box b {
-    display: block;
-    color: var(--clay);
-    font-size: var(--font-title);
-    margin-bottom: 3px;
-}
-
-/* --- Work at a Glance header row --- */
-.glance-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 14px 0 8px 0;
-}
-
-.glance-header .impact-title {
-    margin: 0;
-}
-
-/* --- Desktop: three carousel columns --- */
-.carousel-section {
-    margin-bottom: 10px;
-}
-
-.carousel-desktop {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--gap);
-    visibility: hidden;
-}
-
-.carousel-desktop.ready {
-    visibility: visible;
-}
-
-.carousel-col {
-    display: flex;
-    flex-direction: column;
-    padding: 0 calc(var(--gap) * 0.75);
-}
-
-/* Vertical hairline dividers between towers — not card containers (3.3) */
-.carousel-col:not(:first-child) {
-    border-left: 1px solid var(--hairline);
-}
-
-.carousel-col-title {
-    padding-bottom: 8px;
-    border-bottom: var(--rule-weight) solid var(--ink);
-    margin-bottom: 12px;
-    font-size: var(--font-label);
-    font-weight: 700;
-    color: var(--ink);
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    text-align: center;
-}
-
-.carousel-card {
-    background: transparent;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    min-height: 190px;
-    flex: 1;
-    overflow: hidden;
-}
-
-.carousel-card-title {
-    font-size: var(--font-sm);
-    font-weight: 600;
-    color: var(--clay);
-    margin-bottom: 8px;
-    line-height: 1.3;
-}
-
-.carousel-card-desc {
-    font-size: var(--font-sm);
-    color: var(--ink);
-    line-height: 2.2;
-    flex: 1;
-    overflow: hidden;
-    white-space: pre-line;
-}
-
-.carousel-nav {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    margin-top: 10px;
-}
-
-.carousel-arrow {
-    background: none;
-    border: 1px solid var(--clay-faint);
-    color: var(--clay);
-    width: 28px;
-    height: 28px;
-    border-radius: 50%;
-    cursor: pointer;
-    font-size: var(--font-sm);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background 0.2s;
-    flex-shrink: 0;
-}
-
-.carousel-arrow:hover { background: var(--clay-hover); }
-
-.carousel-counter {
-    font-size: var(--font-xs);
-    color: var(--text-secondary);
-    min-width: 30px;
-    text-align: center;
-}
-
-.carousel-more {
-    text-align: right;
-    margin-top: 6px;
-    font-size: var(--font-xs);
-}
-
-.carousel-more a { color: var(--text-link); text-decoration: none; }
-.carousel-more a:hover { text-decoration: underline; }
-
-/* --- Mobile swipe carousel (index) --- */
-.carousel-mobile { display: none; }
-
-.swipe-wrapper {
-    display: flex;
-    align-items: stretch;
-}
-
-.swipe-sidebar {
-    width: 30px;
-    min-width: 30px;
-    background: var(--clay-hover);
-    border: 1px solid var(--clay-mid);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    color: var(--clay);
-    font-size: var(--font-sm);
-    user-select: none;
-    flex-shrink: 0;
-}
-
-.swipe-sidebar.left  { border-radius: var(--radius) 0 0 var(--radius); border-right: none; }
-.swipe-sidebar.right { border-radius: 0 var(--radius) var(--radius) 0; border-left: none; }
-.swipe-sidebar:hover { background: var(--clay-faint); }
-
-.swipe-viewport {
-    flex: 1;
-    overflow: hidden;
-    border: 1px solid var(--clay-faint);
-    border-left: none;
-    border-right: none;
-}
-
-.swipe-track {
-    display: flex;
-    transition: transform 0.35s ease;
-    will-change: transform;
-}
-
-.swipe-card {
-    min-width: 100%;
-    max-width: 100%;
-    background: var(--card-bg);
-    padding: 14px;
-    box-sizing: border-box;
-    flex-shrink: 0;
-    min-height: 170px;
-    color: var(--ink);
-}
-
-.swipe-card-section {
-    font-size: var(--font-xs);
-    font-weight: 700;
-    color: var(--clay-mid);
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    margin-bottom: 6px;
-}
-
-.swipe-card-title {
-    font-size: var(--font-sm);
-    font-weight: 600;
-    color: var(--clay);
-    margin-bottom: 8px;
-    line-height: 1.3;
-}
-
-.swipe-card-desc {
-    color: var(--ink);
-    line-height: 1.4;
-    white-space: pre-line;
-}
-
-.swipe-counter {
-    text-align: center;
-    font-size: var(--font-xs);
-    color: var(--text-secondary);
-    margin-top: 8px;
-}
-
-/* --- Bottom section: Thought Leadership + Engage --- */
-.bottom {
-    display: grid;
-    grid-template-columns: 3fr 1fr;
-    gap: var(--gap);
-    margin-top: 12px;
-}
-
-.compact-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.compact-list li {
-    display: flex;
-    align-items: flex-start;
-    gap: 8px;
-    margin-bottom: 8px;
-    font-size: var(--font-sm);
-    color: var(--ink);
-    line-height: 1.5;
-}
-
-.compact-list li span { color: var(--ink); }
-
-.compact-list i {
-    color: var(--clay);
-    margin-top: 2px;
-    flex-shrink: 0;
-    font-size: var(--font-sm);
-    width: 16px;
-    text-align: center;
-}
-
-.compact-list strong { color: var(--clay); }
-
-/* --- Engage with Me icons --- */
-.engage-icons {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    gap: 16px;
-    margin-top: 10px;
-    align-items: center;
-}
-
-.engage-icons a {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    text-decoration: none;
-}
-
-.engage-icons a:link,
-.engage-icons a:visited,
-.engage-icons a:hover,
-.engage-icons a:active { text-decoration: none; }
-
-.engage-icons a i {
-    width: 18px;
-    font-size: var(--font-base);
-    color: var(--clay);
-    text-align: center;
-    flex-shrink: 0;
-}
-
-.engage-icons a span {
-    font-size: var(--font-xs);
-    color: var(--ink);
-}
-
-/* --- Compact overrides (≤1023px) --- */
-@media (max-width: 1023px) {
-
-    /* Impact: dissolve rows, parent becomes 3-col grid */
-    .impact {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 6px;
-        padding: 0 4px;
-    }
-    .impact-title {
-        grid-column: 1 / -1;
-        margin-bottom: 6px;
-    }
-    .impact-row { display: contents; }
-
-    /* Boxes: smaller on mobile */
-    .box {
-        max-width: none;
-        min-height: 44px;
-        padding: 4px 3px;
-    }
-    .box b { font-size: var(--font-xs); }
-
-    /* Carousel: swap to swipe */
-    .carousel-desktop { display: none; }
-    .carousel-mobile  { display: block; }
-
-    /* Bottom: stack vertically */
-    .bottom { grid-template-columns: 1fr; }
-
-    /* swipe-more: visible on compact */
-    #swipe-more { display: block; }
-
-    /* Engage icons: horizontal row on compact */
-    .engage-icons {
-        flex-direction: row;
-        flex-wrap: nowrap;
-        gap: 12px;
-        align-items: center;
-        justify-content: flex-start;
-    }
-}
-
-/* --- Wide overrides (≥1024px) --- */
-@media (min-width: 1024px) {
-    .carousel-desktop { display: grid; }
-    .carousel-mobile  { display: none; }
-    #swipe-more { display: none; }
-    .engage-icons {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: clamp(10px, 1.5vw, 18px);
-    }
-}
-
-.blogs-pill {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    text-decoration: none;
-    border: 1px solid var(--clay-faint);
-    border-radius: var(--radius);
-    padding: 4px 14px 4px 10px;
-    background: transparent;
-    transition: background 0.2s;
-}
-.blogs-pill:hover { background: var(--clay-hover); }
-.blogs-pill i { color: var(--clay); font-size: 12px; }
-.blogs-pill span {
-    font-size: var(--font-xs);
-    font-weight: 600;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    color: var(--clay);
-}
-
-</style>
 </head>
 
 <body>
@@ -444,7 +30,7 @@
     </div>
     <div class="header-center">
         <h1>SHARAD KUMAR</h1>
-        <p class="tagline">Operating at the intersection of Markets, Technology and Delivery</p>
+        <p class="tagline">Operating at the intersection of Markets, Solutions &amp; Delivery</p>
     </div>
     <div class="side-block">
         <svg viewBox="0 0 120 120" width="80" height="80">
@@ -480,14 +66,6 @@
     </div>
 </div>
 
-<!-- WORK AT A GLANCE HEADER -->
-<div class="glance-header">
-    <div class="impact-title">WORK AT A GLANCE</div>
-    <a class="blogs-pill" href="blogs.html">
-        <i class="fa-solid fa-pen-nib"></i>
-        <span>View My Blogs</span>
-    </a>
-</div>
 <div id="swipe-more" style="font-size:var(--font-xs);"></div>
 
 <!-- CAROUSEL SECTION -->
@@ -558,33 +136,28 @@
 </div>
 
 <!-- BOTTOM SECTION -->
-<div class="bottom">
-    <div>
-        <div class="section-title">THOUGHT LEADERSHIP &amp; RECOGNITION</div>
-        <ul class="compact-list">
-            <li><i class="fa-solid fa-pen-nib"></i><span><strong>Author &amp; Co-Author</strong>: DevOps whitepapers, Testing Practitioner Handbook and playbooks on APM, governance and multi-vendor operations and process.</span></li>
-            <li><i class="fa-solid fa-certificate"></i><span><strong>Certified SME</strong>: SMACT (Social, Mobile, Analytics, Cloud and Internet of Things), Digital Strategy and Transformation, Cloud and API Gateway</span></li>
-            <li><i class="fa-solid fa-microphone"></i><span><strong>Speaker &amp; Jury Member</strong>: Engaged at national and international forums on AI, DevOps and transformation; Member, Asia Cloud Computing Association.</span></li>
-            <li><i class="fa-solid fa-trophy"></i><span><strong>Recognized</strong>: QA workshop South Korea, Laying process foundation for offshore delivery; Best Business Operator; multiple ACE awards.</span></li>
-        </ul>
-    </div>
-    <div>
-        <div class="section-title">ENGAGE WITH ME</div>
-        <div class="engage-icons">
-            <a href="mailto:sharad.rsg@gmail.com?subject=Connect with Sharad">
-                <i class="fa-solid fa-envelope" style="color:var(--clay);"></i>
-                <span>E-mail</span>
-            </a>
-            <a href="https://www.linkedin.com/in/sharad-kumar-11264247" target="_blank">
-                <i class="fa-brands fa-linkedin" style="color:#0A66C2;"></i>
-                <span>LinkedIn</span>
-            </a>
-            <a href="https://calendly.com/sharad-kumar-ms/strategic-connect" target="_blank">
-                <i class="fa-solid fa-calendar-check" style="color:#006BFF;"></i>
-                <span>Book my Calendar</span>
-            </a>
-        </div>
-    </div>
+<!-- CONNECT STRIP -->
+<div class="connect-strip">
+    <a href="index.html">
+        <i class="fa-solid fa-house" style="color:var(--clay);"></i>
+        <span>Home</span>
+    </a>
+    <a href="blogs.html">
+        <i class="fa-solid fa-pen-nib" style="color:var(--clay);"></i>
+        <span>View Blogs</span>
+    </a>
+    <a href="https://www.linkedin.com/in/sharad-kumar-11264247" target="_blank">
+        <i class="fa-brands fa-linkedin" style="color:#0A66C2;"></i>
+        <span>LinkedIn</span>
+    </a>
+    <a href="mailto:sharad.rsg@gmail.com?subject=Connect with Sharad">
+        <i class="fa-solid fa-envelope" style="color:var(--clay);"></i>
+        <span>E-Mail</span>
+    </a>
+    <a href="https://calendly.com/sharad-kumar-ms/strategic-connect" target="_blank">
+        <i class="fa-solid fa-calendar-days" style="color:#006BFF;"></i>
+        <span>Book my Calendar</span>
+    </a>
 </div>
 
 </div><!-- end .container -->
@@ -598,10 +171,10 @@ const data = {
         { title: "Brand Positioning", desc: "• Keynote & plenary speaker at national & international forums\n• Conducted executive analyst briefings for enhancing market credibility\n• Built thought leadership for DevOps, AI enabled transformations\n• Launched service lines with ROI-backed business & value assessments" }
     ],
     solution: [
-        { title: "Cloud & SaaS Transformation", desc: "• Architected migration of 6,000+ applications using 7R principles\n• Designed multi-cloud ecosystems with CI/CD & release orchestration\n• Built API & service virtualzation Platform-as-a-Service architectures\n• Constructed subscription & pay-per-use based as-a-service models" },
-        { title: "AI-Driven Engineering", desc: "• Embedded ML-based predictive models for reliability forecasting\n• Designed AI-assisted traceability & stability model through SDLC\n• Built intelligent progression -> regression test minimising duplicity\n• Integrated AI enabled end-to-end automation through the SDLC" },
-        { title: "DevOps & Security", desc: "• Architected DevSecOps ecosystems across req, dev, test & release\n• Implemented in-sprint progressive automation accelrating CI/CD\n• Engineered Service Virtualisation & Test Data Management platforms\n• Designed cloud-hosted Performance Engineering Lab (Pay-per-Use)" },
-        { title: "Data Analytics & Observability", desc: "• Established BI-led engineering frameworks for operational excellence\n• Built live dashboard for SLA & schedule governance & visibility\n• Developed balanced scorecards as observability frameworks\n• Integrated predictive modelling for risk governance through SDLC" }
+        { title: "Cloud & SaaS Transformation", desc: "• Architected migration of 6,000+ applications using 7R principles\n• Designed multi-cloud ecosystems with CI/CD & release orchestration\n• Built API & service virtualization Platform-as-a-Service architectures\n• Constructed subscription & pay-per-use based as-a-service models" },
+        { title: "AI-Driven Engineering", desc: "• Embedded ML-based predictive models for reliability forecasting\n• Designed AI-assisted traceability & stability model through SDLC\n• Built intelligent progression -> regression test minimizing duplicity\n• Integrated AI enabled end-to-end automation through the SDLC" },
+        { title: "DevOps & Security", desc: "• Architected DevSecOps ecosystems across req, dev, test & release\n• Implemented in-sprint progressive automation accelerating CI/CD\n• Engineered Service Virtualization & Test Data Management platforms\n• Designed cloud-hosted Performance Engineering Lab (Pay-per-Use)" },
+        { title: "Data Analytics & Observability", desc: "• Established BI-led engineering frameworks for operational excellence\n• Built live dashboard for SLA & schedule governance & visibility\n• Developed balanced scorecards as observability frameworks\n• Integrated predictive modeling for risk governance through SDLC" }
     ],
     delivery: [
         { title: "Agile & Scrum Execution", desc: "• Led global teams with Agile governance with workflow automation\n• Implemented tiered regression suites accelerating CI/CD cycles\n• Revived & Scaled engagements from 45 to 180+ FTE in 10 months\n• Established CoE scaling from 40 members to 425 in 18 months" },
@@ -620,10 +193,18 @@ const allCards = [];
 
 let currentCard = 0;
 
+// Splits the existing "• line\n• line" desc strings into a clean array —
+// keeps the original data untouched, just changes how it's rendered.
+function getBullets(item) {
+    return item.desc.split('\n').map(line => line.replace(/^•\s*/, ''));
+}
+
 function renderDesktop(s) {
     const item = data[s][idx[s]];
     document.getElementById('d-' + s + '-title').textContent = item.title;
-    document.getElementById('d-' + s + '-desc').textContent  = item.desc;
+    const bullets = getBullets(item);
+    document.getElementById('d-' + s + '-desc').innerHTML =
+        '<ul class="carousel-bullets">' + bullets.map(b => `<li>${b}</li>`).join('') + '</ul>';
     document.getElementById('d-' + s + '-counter').textContent = (idx[s] + 1) + '/' + data[s].length;
 }
 
@@ -639,10 +220,11 @@ function buildSwipeCards() {
     allCards.forEach(card => {
         const div = document.createElement('div');
         div.className = 'swipe-card';
+        const bullets = getBullets(card);
         div.innerHTML = `
             <div class="swipe-card-section">${card.section}</div>
             <div class="swipe-card-title">${card.title}</div>
-            <div class="swipe-card-desc">${card.desc.replace(/\n/g, '\n\n')}</div>`;
+            <div class="swipe-card-desc"><ul>${bullets.map(b => `<li>${b}</li>`).join('')}</ul></div>`;
         track.appendChild(div);
     });
     updateSwipe();
