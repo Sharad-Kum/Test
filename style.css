@@ -40,8 +40,8 @@
     --rule-weight:   2px;
 
     /* Colors — "Architecture of Delivery" palette (light) */
-    --bg:             #FAFAFA;
-    --bg-raised:      #F1F1EF;
+    --bg:             #FFFFFF;
+    --bg-raised:      #F7F7F7;
     --ink:            #0A0A0A;
     --clay:           #1F3A63;
     --clay-faint:     rgba(31, 58, 99, 0.40);
@@ -96,14 +96,14 @@
 
 @media print {
     :root {
-        --bg:             #FAFAF8;
-        --bg-raised:      #F3F1EB;
-        --ink:            #1F1F1D;
-        --clay:           #B5602F;
-        --text-secondary: #847F74;
-        --text-secondary-strong: #5C584F;
-        --hairline:       #E0DDD5;
-        --muted-tint:     #CDC8BA;
+        --bg:             #FFFFFF;
+        --bg-raised:      #F7F7F7;
+        --ink:            #0A0A0A;
+        --clay:           #1F3A63;
+        --text-secondary: #6B6B6B;
+        --text-secondary-strong: #3D3D3D;
+        --hairline:       #E2E2E0;
+        --muted-tint:     #D4D4D2;
         --text-on-accent: #FAFAF8;
         --text-green:     #2F7D4F;
     }
@@ -723,7 +723,7 @@ h1 {
     flex: 1;
     overflow-y: auto;
     border: 1px solid var(--clay-faint);
-    background: var(--bg-raised);
+    background: var(--bg);
     scrollbar-width: thin;
     scrollbar-color: var(--clay-faint) transparent;
 }
@@ -800,10 +800,6 @@ h1 {
 .blog-exemplar {
     padding: 14px 32px;
     border-top: 1px solid var(--clay-faint-dim);
-    display: grid;
-    grid-template-columns: 30px 1fr;
-    gap: 0 12px;
-    align-items: start;
 }
 
 .blog-exemplar:last-of-type { border-bottom: 1px solid var(--clay-faint-dim); }
@@ -1003,6 +999,16 @@ h1 {
 
 .blog-closing-text { font-size: var(--font-base); color: var(--ink); line-height: 1.75; margin-bottom: 14px; }
 .blog-closing-text strong { color: var(--clay); font-weight: 600; }
+
+.blog-signature {
+    font-size: var(--font-xs);
+    font-style: italic;
+    color: var(--clay);
+    text-align: right;
+    padding: 14px 32px 18px;
+    border-top: 1px solid var(--clay-faint-dim);
+    letter-spacing: 0.02em;
+}
 
 .blog-series-note {
     font-size: var(--font-xs);
@@ -1668,7 +1674,7 @@ h1 {
     display: flex;
     align-items: baseline;
     gap: 10px;
-    padding: 12px 14px;
+    padding: 10px 14px;
     border: 1px solid var(--card-border);
     border-radius: var(--radius);
     text-decoration: none;
@@ -1678,7 +1684,7 @@ h1 {
 
 .blogs-card-num { font-size: var(--font-xs); color: var(--text-secondary); font-weight: 600; flex-shrink: 0; }
 .blogs-card-title { font-size: var(--font-sm); color: var(--ink); flex: 1; line-height: 1.4; }
-.blogs-card-read { font-size: var(--font-xs); color: var(--text-link); font-weight: 600; white-space: nowrap; flex-shrink: 0; }
+
 
 /* Pager — reuses the same arrow/counter language as gtm/solution/delivery */
 .blogs-pager {
