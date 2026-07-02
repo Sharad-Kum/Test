@@ -57,6 +57,7 @@
     --text-link:      var(--clay);
     --text-on-accent: #FAFAFA;
     --text-green:     #2F7D4F;
+    --linkedin-blue:  #0A66C2;
     --card-bg:        transparent;
     --card-border:    var(--hairline);
 }
@@ -752,13 +753,6 @@ h1 {
 
 .blog-headline em { font-style: italic; color: var(--clay); }
 
-.blog-tagline {
-    font-size: var(--font-xs);
-    letter-spacing: 0.14em;
-    color: var(--ink);
-    margin-bottom: 12px;
-}
-
 .blog-subhead {
     font-size: var(--font-base);
     color: var(--ink);
@@ -804,18 +798,7 @@ h1 {
 
 .blog-exemplar:last-of-type { border-bottom: 1px solid var(--clay-faint-dim); }
 
-.blog-flag-col {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 3px;
-    padding-top: 2px;
-}
-
-.blog-flag     { font-size: 17px; line-height: 1; }
-.blog-geo-tag  { font-size: var(--font-xs); letter-spacing: 0.1em; color: var(--ink); text-transform: uppercase; }
 .blog-org-name { font-size: var(--font-base); font-weight: 600; color: var(--ink); margin-bottom: 6px; }
-.blog-sector-tag { font-size: var(--font-xs); letter-spacing: 0.1em; text-transform: uppercase; color: var(--clay); margin-bottom: 6px; }
 
 .blog-metrics { display: flex; flex-direction: column; gap: 4px; }
 
@@ -869,71 +852,6 @@ h1 {
 .blog-shift-col.now .blog-shift-q { font-weight: 500; font-style: normal; }
 
 .blog-arrow-mid { text-align: center; color: var(--clay); font-size: 15px; }
-
-.blog-impact-block {
-    margin: 14px 32px;
-    background: var(--bg-raised);
-    border: 1px solid var(--clay-faint);
-    padding: 14px 20px;
-}
-
-.blog-impact-label {
-    font-size: var(--font-xs);
-    letter-spacing: 0.14em;
-    color: var(--clay);
-    margin-bottom: 10px;
-}
-
-.blog-impact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
-
-.blog-impact-item {
-    padding: 10px 12px;
-    border: 1px solid var(--clay-faint);
-    background: var(--bg-raised);
-}
-
-.blog-impact-stat {
-    font-size: clamp(14px, 2vw, 18px);
-    font-weight: 700;
-    color: var(--clay);
-    line-height: 1;
-    margin-bottom: 4px;
-}
-
-.blog-impact-desc { font-size: var(--font-xs); color: var(--ink); line-height: 1.5; }
-
-.blog-layer-block {
-    margin: 0 32px;
-    padding: 14px 0;
-    border-top: 1px solid var(--clay-faint-dim);
-}
-
-.blog-layer-block:last-of-type { border-bottom: 1px solid var(--clay-faint-dim); }
-
-.blog-layer-header { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
-
-.blog-layer-pill {
-    font-size: var(--font-xs);
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--text-on-accent);
-    background: var(--clay);
-    padding: 3px 10px;
-    font-weight: 500;
-}
-
-.blog-layer-desc { font-size: var(--font-base); color: var(--ink); line-height: 1.55; }
-
-.blog-tool-list { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 8px; }
-
-.blog-tool {
-    font-size: var(--font-xs);
-    letter-spacing: 0.06em;
-    color: var(--clay);
-    border: 1px solid var(--clay-faint);
-    padding: 2px 8px;
-    background: var(--clay-bg);
-}
 
 .blog-timeline { margin: 0 32px; border-top: 1px solid var(--clay-faint-dim); }
 
@@ -1010,16 +928,6 @@ h1 {
     letter-spacing: 0.02em;
 }
 
-.blog-series-note {
-    font-size: var(--font-xs);
-    letter-spacing: 0.08em;
-    color: var(--clay);
-    border-left: 2px solid var(--clay);
-    padding-left: 10px;
-    margin-bottom: 14px;
-    line-height: 1.6;
-}
-
 /* Footer strip */
 .blog-footer {
     width: 100%;
@@ -1065,8 +973,6 @@ h1 {
     .blog-section-label,
     .blog-exemplar,
     .blog-shift-block,
-    .blog-impact-block,
-    .blog-layer-block,
     .blog-timeline,
     .blog-forces,
     .blog-spotlight,
@@ -1131,14 +1037,6 @@ h1 {
 
 .at-risk { font-weight: 600; font-style: italic; color: var(--ink); }
 
-.gold-rule {
-    border: none;
-    border-top: 1px solid var(--clay-faint-dim);
-    margin: 0 auto 14px auto;
-    max-width: 860px;
-    width: 100%;
-}
-
 .closing-statement {
     max-width: 860px;
     margin: 0 auto;
@@ -1183,7 +1081,7 @@ h1 {
    content needs — desktop, and tall tablet-portrait. Landscape/phone
    already need to scroll, so they're left untouched. */
 @media (min-width: 1024px) and (min-height: 750px) {
-    .about-body, .belief, .gold-rule, .closing-statement { max-width: 960px; }
+    .about-body, .belief, .closing-statement { max-width: 960px; }
 }
 
 @media (min-width: 701px) and (max-width: 1023px) and (orientation: portrait) and (min-height: 900px) {
@@ -1565,27 +1463,6 @@ h1 {
     .carousel-desktop { display: grid; }
     .carousel-mobile  { display: none; }
     #swipe-more { display: none; }
-}
-
-.blogs-pill {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    text-decoration: none;
-    border: 1px solid var(--clay-faint);
-    border-radius: var(--radius);
-    padding: 4px 14px 4px 10px;
-    background: transparent;
-    transition: background 0.2s;
-}
-.blogs-pill:hover { background: var(--clay-hover); }
-.blogs-pill i { color: var(--clay); font-size: 12px; }
-.blogs-pill span {
-    font-size: var(--font-xs);
-    font-weight: 600;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    color: var(--clay);
 }
 
 /* --- Connect strip — same pattern as index.html (About page) --- */

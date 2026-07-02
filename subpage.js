@@ -5,6 +5,10 @@
    calls this script after its data block.
    ============================================= */
 
+const SWIPE_THRESHOLD_PX = 40;
+const LANDSCAPE_MIN_WIDTH_PX = 700;
+const LANDSCAPE_MAX_HEIGHT_PX = 500;
+
 const desktopPages = [[cards[0], cards[1]], [cards[2], cards[3]]];
 
 function buildCard(card) {
@@ -19,7 +23,7 @@ function buildCard(card) {
 
 let desktopPage = 0;
 
-const isMobileLandscape = () => window.innerWidth > 700 && window.innerHeight <= 500;
+const isMobileLandscape = () => window.innerWidth > LANDSCAPE_MIN_WIDTH_PX && window.innerHeight <= LANDSCAPE_MAX_HEIGHT_PX;
 
 function renderDesktop() {
     document.getElementById('desktop-grid').innerHTML =
@@ -67,7 +71,7 @@ function initTouch() {
         track.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
         track.addEventListener('touchend', e => {
             const diff = touchStartX - e.changedTouches[0].clientX;
-            if (Math.abs(diff) > 40) mobileNav(diff > 0 ? 1 : -1);
+            if (Math.abs(diff) > SWIPE_THRESHOLD_PX) mobileNav(diff > 0 ? 1 : -1);
         }, { passive: true });
     }
     const grid = document.getElementById('desktop-grid');
@@ -75,7 +79,7 @@ function initTouch() {
         grid.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
         grid.addEventListener('touchend', e => {
             const diff = touchStartX - e.changedTouches[0].clientX;
-            if (Math.abs(diff) > 40) desktopNav(diff > 0 ? 1 : -1);
+            if (Math.abs(diff) > SWIPE_THRESHOLD_PX) desktopNav(diff > 0 ? 1 : -1);
         }, { passive: true });
     }
 }
