@@ -474,6 +474,20 @@ h1 {
     box-sizing: border-box;
 }
 
+/* Zone 0 — Category eyebrow: optional, only rendered when a card
+   supplies `category` (used by ai.html to tag GTM / Solution / Delivery
+   within a single shared carousel). Absent elsewhere — no visual change
+   to gtm.html, solution.html, delivery.html. */
+.sub-card-category {
+    font-size: var(--font-xs);
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--clay);
+    opacity: 0.75;
+    margin-bottom: 4px;
+}
+
 /* Zone 1 — Title: 1 line fixed */
 .sub-card h3 {
     color: var(--clay);

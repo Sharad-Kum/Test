@@ -9,10 +9,21 @@ const SWIPE_THRESHOLD_PX = 40;
 const LANDSCAPE_MIN_WIDTH_PX = 700;
 const LANDSCAPE_MAX_HEIGHT_PX = 500;
 
-const desktopPages = [[cards[0], cards[1]], [cards[2], cards[3]]];
+// Chunks `cards` into groups of 2 for desktop paging. Generalized from the
+// original hardcoded [[0,1],[2,3]] so pages with more than 4 cards (e.g.
+// ai.html's 6 cards) page correctly too — behaves identically for 4 cards.
+function chunk(arr, size) {
+    const out = [];
+    for (let i = 0; i < arr.length; i += size) out.push(arr.slice(i, i + size));
+    return out;
+}
+
+const desktopPages = chunk(cards, 2);
 
 function buildCard(card) {
+    const categoryTag = card.category ? `<div class="sub-card-category">${card.category}</div>` : '';
     return `<div class="sub-card">
+        ${categoryTag}
         <h3>${card.title}</h3>
         <div class="sub-mandate">Mandate: ${card.mandate}</div>
         <div class="sub-narrative">${card.narrative}</div>

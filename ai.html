@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:title" content="Sharad Kumar | AI-Enabled Work" />
+<meta property="og:description" content="Where AI has directly shaped outcomes across Go-To-Market, Solution and Delivery." />
+<meta name="description" content="AI-enabled outcomes across GTM, Solution and Delivery." />
+<meta property="og:image" content="https://sharad-kum.github.io/og-image.png" />
+<meta property="og:url" content="https://sharad-kum.github.io/ai.html" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Sharad Kumar" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="author" content="Sharad Kumar" />
+<title>Sharad Kumar | AI-Enabled Work</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=4">
+</head>
+<body>
+<div class="sub-page-container">
+
+    <!-- LETTERHEAD -->
+    <div class="letterhead">
+        <div class="side-block"></div>
+        <div class="header-center">
+            <h1>SHARAD KUMAR</h1>
+            <p class="tagline">Orchestrating Markets, Solutions &amp; Delivery</p>
+        </div>
+        <div class="side-block">
+            <svg viewBox="0 0 120 120" width="80" height="80">
+                <defs><path id="bottom-arc" d="M 15,60 A 45,45 0 0,0 105,60"/></defs>
+                <image href="logo.png" x="20" y="15" width="80" height="80"/>
+                <text font-size="12" style="fill:var(--clay);font-family:var(--font-body);" font-weight="700" letter-spacing="2">
+                    <textPath href="#bottom-arc">Addicted to Results</textPath>
+                </text>
+            </svg>
+        </div>
+    </div>
+
+    <!-- INTRO NARRATIVE -->
+    <div class="intro-sub">
+        <p class="page-title">AI-Enabled Work</p>
+        <ul class="extra-list">
+            <li>A dedicated view into where AI has directly shaped outcomes — deliberately distinct from the core GTM, Solution and Delivery work presented elsewhere on this site.</li>
+            <li>Spans structured go-to-market motions, governed solution architecture, and operational delivery — each using AI as an explicit lever, not an incidental feature.</li>
+            <li>Reflects both formal enterprise engagements and personal experimentation — including building and hosting this site entirely through AI-agent collaboration.</li>
+        </ul>
+    </div>
+
+    <!-- CAROUSEL SECTION -->
+    <div class="sub-carousel-section">
+
+        <div class="page-header-row">
+            <div class="page-sub-title">Key Highlights</div>
+        </div>
+
+        <!-- Wide: two-column grid -->
+        <div class="sub-carousel-desktop">
+            <div class="sub-page-grid" id="desktop-grid"></div>
+            <div class="sub-carousel-nav">
+                <button class="sub-arrow" onclick="desktopNav(-1)">&#8592;</button>
+                <span class="sub-counter" id="desktop-counter">1 / 3</span>
+                <button class="sub-arrow" onclick="desktopNav(1)">&#8594;</button>
+            </div>
+        </div>
+
+        <!-- Compact: swipe carousel -->
+        <div class="sub-carousel-mobile">
+            <div class="sub-swipe-wrapper">
+                <div class="sub-swipe-sidebar left" onclick="mobileNav(-1)">&#8592;</div>
+                <div class="sub-swipe-viewport">
+                    <div class="sub-swipe-track" id="mobile-track"></div>
+                </div>
+                <div class="sub-swipe-sidebar right" onclick="mobileNav(1)">&#8594;</div>
+            </div>
+            <div class="sub-swipe-counter" id="mobile-counter">1 / 6</div>
+        </div>
+
+    </div>
+
+    <!-- BACK TO MAIN -->
+    <div class="back-to-main">
+        <a href="mywork.html"><i class="fas fa-arrow-up"></i> Back to My Work</a>
+    </div>
+
+</div><!-- end .sub-page-container -->
+
+<script>
+const cards = [
+    {
+        category: "Growth & GTM",
+        title: "AI-Governed Advisory — Repositioning the Adoption Conversation",
+        mandate: "Turn a governed AI-onboarding engagement into a differentiated, repeatable advisory motion — not a model-recommendation exercise.",
+        narrative: "Reframed enterprise AI conversations with C-suite stakeholders around fitment, control and cost alignment at scale, distinguishing the offer from single-model vendor conversations and building it into reusable, sellable IP.",
+        bullets: [
+            "Shifted client conversations from \"which model\" to a governed, multi-model operating model, sharpening differentiation against tool-vendor and single-model competitors.",
+            "Packaged fitment, tiering and guardrail frameworks from the engagement into reusable advisory IP for future AI-governance pursuits.",
+            "Used the engagement as a reference narrative in executive and analyst conversations, opening a new advisory-led pipeline category."
+        ],
+        outcome: "New advisory offering incubated | Differentiated vs. single-model competitors | Reference-led pipeline opened"
+    },
+    {
+        category: "Growth & GTM",
+        title: "Partner-Led AI Offering — Joint GTM for AI-Enabled Platforms",
+        mandate: "Build joint go-to-market models with technology partners around AI-enabled, consumption-based offerings.",
+        narrative: "Extended existing ELA and joint-GTM playbooks — built with partners like HP, IBM and CA Technologies — into AI-enabled service constructs, aligning commercial models to how enterprises actually consume AI at scale.",
+        bullets: [
+            "Co-designed AI-enabled, pay-per-use and outcome-linked pricing constructs with technology partners to lower enterprise AI adoption friction.",
+            "Positioned AI capability as a joint value proposition rather than a standalone product pitch, strengthening deal credibility with skeptical buying committees.",
+            "Built qualification criteria distinguishing genuine AI-orchestration plays from repackaged automation, sharpening pursuit targeting."
+        ],
+        outcome: "New AI-consumption pricing constructs | Stronger partner-led differentiation | Sharper pursuit qualification"
+    },
+    {
+        category: "Solution",
+        title: "Governed Multi-Model AI Operating Model",
+        mandate: "Architect a governed, multi-model AI operating model — not a single model recommendation.",
+        narrative: "Defined workload-to-model alignment, intent-to-platform mapping, tiering strategy and governance guardrails for an enterprise-wide AI ecosystem, anchored to fitment, control and cost rather than a single vendor's roadmap.",
+        bullets: [
+            "Mapped workload types to appropriate model tiers, balancing capability, latency, cost and data-sensitivity requirements across the estate.",
+            "Designed governance guardrails covering access control, audit trail and policy-based routing across teams, geographies and functions.",
+            "Built a scalable operating model the organization could run continuously — not a one-time pilot deployment."
+        ],
+        outcome: "Governed AI operating model delivered | Enterprise-wide adoption path | Fitment, control & cost aligned"
+    },
+    {
+        category: "Solution",
+        title: "Predictive Classification for Cloud Migration",
+        mandate: "Apply early ML-based classification to accelerate large-scale application segmentation.",
+        narrative: "During a 6,000+ application cloud migration initiative, applied ML-based classification models to validate segmentation strategy — turning months of manual assessment into weeks, ahead of AI becoming mainstream in delivery tooling.",
+        bullets: [
+            "Trained classification models on application metadata and dependency patterns to auto-suggest 7R migration treatment.",
+            "Reduced manual assessment effort from months to weeks while building a defensible, data-driven prioritization model.",
+            "Used model output to validate and challenge manual assessments, catching inconsistencies before migration planning locked in."
+        ],
+        outcome: "Months of assessment compressed to weeks | Defensible, data-driven prioritization | Early ML adoption in delivery (2017)"
+    },
+    {
+        category: "Delivery",
+        title: "Aviation ITOps — AI Incident Correlation",
+        mandate: "Collapse a multi-hour incident resolution chain using AI-driven correlation and anomaly detection.",
+        narrative: "Deployed AI-driven incident correlation, ML-based anomaly detection and a knowledge graph built from three years of historical incident data, cutting resolution time and freeing engineers from repeatable triage work.",
+        bullets: [
+            "Grouped related alerts into single incidents via AI correlation, eliminating alert noise across full-stack observability tooling.",
+            "Auto-categorized tickets by type, severity and affected system using NLP-based classification, speeding routing and ownership.",
+            "Introduced RPA-assisted remediation for known fix patterns within policy guardrails, with human approval at defined thresholds."
+        ],
+        outcome: "MTTR cut from 4–6 hrs to under 90 min | Automated resolution 8% to 54% | Repeat incidents down from 41% to 9%"
+    },
+    {
+        category: "Delivery",
+        title: "Oil & Gas FinOps — Touchless Invoice Processing",
+        mandate: "Move finance operations from manual exception triage to AI-driven straight-through processing.",
+        narrative: "Combined intelligent document processing, AI-driven 3-way matching and ML-based exception classification to shift a 50,000-invoice-a-month operation from constant manual triage to predominantly touchless processing.",
+        bullets: [
+            "Automated invoice capture from email, portal, EDI and paper using OCR and intelligent document processing.",
+            "Applied AI-driven 3-way matching with confidence scoring, escalating only genuine exceptions to human reviewers.",
+            "Introduced predictive payment analytics forecasting cash-flow impact in real time, sharpening working-capital decisions."
+        ],
+        outcome: "Touchless processing 12% to 67% | Month-end close cut from 18 to 9 days | Vendor on-time payment up to 91%"
+    }
+];
+</script>
+<script src="subpage.js"></script>
+
+</body>
+</html>
