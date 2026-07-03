@@ -1130,7 +1130,7 @@ h1 {
 /* --- Impact Snapshot --- */
 .impact {
     text-align: center;
-    margin: 8px auto 10px auto;
+    margin: 18px auto 10px auto;
 }
 
 .impact-title {
@@ -1174,6 +1174,7 @@ h1 {
 
 /* --- Desktop: three carousel columns --- */
 .carousel-section {
+    margin-top: 14px;
     margin-bottom: 10px;
 }
 
@@ -1191,17 +1192,17 @@ h1 {
 .carousel-col {
     display: flex;
     flex-direction: column;
-    padding: 0 calc(var(--gap) * 0.75);
-}
-
-/* Vertical hairline dividers between towers — not card containers (3.3) */
-.carousel-col:not(:first-child) {
-    border-left: 1px solid var(--hairline);
+    padding: 14px calc(var(--gap) * 0.75);
+    border: 1px solid var(--card-border);
+    background: var(--card-bg);
+    border-radius: var(--radius);
 }
 
 .carousel-col-title {
-    padding-bottom: 8px;
-    border-bottom: var(--rule-weight) solid var(--ink);
+    padding: 6px 10px 8px;
+    background: var(--clay-faint-dim);
+    border-bottom: var(--rule-weight) solid var(--clay);
+    border-radius: var(--radius);
     margin-bottom: 12px;
     font-size: var(--font-label);
     font-weight: 700;
@@ -1301,7 +1302,7 @@ h1 {
 
 .carousel-more {
     text-align: right;
-    margin-top: 6px;
+    margin-top: 16px;
     font-size: var(--font-xs);
 }
 
@@ -1470,9 +1471,9 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    padding: 14px 0 4px 0;
-    border-top: 1px solid var(--hairline);
-    margin-top: 16px;
+    padding: 10px 0;
+    border-top: 1px solid var(--clay-faint);
+    margin-top: 8px;
 }
 .connect-strip a {
     display: flex;
