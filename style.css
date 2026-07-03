@@ -314,6 +314,17 @@ h1 {
     }
 }
 
+/* Landscape phones still have plenty of horizontal room even under the
+   1023px width breakpoint above — the portrait-only crowding the stacked
+   layout was built for doesn't apply there, so keep the row inline. */
+@media (max-width: 1023px) and (orientation: landscape) {
+    .mywork-header-row {
+        flex-direction: row;
+        align-items: center;
+        gap: 8px;
+    }
+}
+
 .back-to-main a {
     font-size: var(--font-sm);
     color: var(--text-link);
@@ -628,6 +639,19 @@ h1 {
 
     /* Stop carousel stretching to fill viewport on mobile */
     .sub-carousel-section { flex: none; }
+
+    /* .sub-page-container inherited height:100vh + overflow:hidden from
+       the shared .container, .sub-page-container rule (section 2) with
+       nothing to undo it on mobile — unlike .container, which gets this
+       same treatment further down for mywork.html. Content taller than
+       one viewport (e.g. ai.html's longer intro + 3-page carousel) was
+       getting clipped with no way to scroll to it. Let it scroll like
+       the rest of the site does on mobile. */
+    .sub-page-container {
+        height: auto;
+        overflow: visible;
+        padding-bottom: 12px;
+    }
 }
 
 
