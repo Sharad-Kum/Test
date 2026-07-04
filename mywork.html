@@ -15,7 +15,7 @@
 <meta property="article:published_time" content="2026-03-31T00:00:00Z" />
 <title>Sharad Kumar | Shaping Markets, Technology and Delivery</title>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=5">
+<link rel="stylesheet" href="style.css?v=6">
 
 </head>
 
@@ -48,7 +48,7 @@
 <!-- INTRO -->
 <div class="mywork-scroll">
 
-<p class="intro">I partner with enterprise leaders to shape go-to-market strategy, engineer AI and cloud enabled solutions, scale delivery,<br> and enable workforce transformation — for measurable outcomes.</p>
+<p class="intro">I partner with enterprise leaders to shape go-to-market strategy, engineer AI and cloud enabled solutions, scale delivery,<br class="intro-br"> and enable workforce transformation — for measurable outcomes.</p>
 
 <!-- IMPACT SNAPSHOT -->
 <div class="impact">
@@ -74,8 +74,6 @@
     <a href="ai.html" class="ai-work-badge">AI-Enabled Work</a>
 </div>
 
-<div id="swipe-more" style="font-size:var(--font-xs);"></div>
-
 <!-- CAROUSEL SECTION -->
 <div class="carousel-section">
 
@@ -89,12 +87,14 @@
                 <div class="carousel-card-title" id="d-growth-title"></div>
                 <div class="carousel-card-desc"  id="d-growth-desc"></div>
             </div>
-            <div class="carousel-nav">
-                <button class="carousel-arrow" onclick="move('growth', -1)">&#8592;</button>
-                <span class="carousel-counter" id="d-growth-counter">1/4</span>
-                <button class="carousel-arrow" onclick="move('growth', 1)">&#8594;</button>
+            <div class="carousel-footer">
+                <div class="carousel-nav">
+                    <button class="carousel-arrow" onclick="move('growth', -1)">&#8592;</button>
+                    <span class="carousel-counter" id="d-growth-counter">1/4</span>
+                    <button class="carousel-arrow" onclick="move('growth', 1)">&#8594;</button>
+                </div>
+                <div class="carousel-more"><a href="gtm.html">More on Growth &rarr;</a></div>
             </div>
-            <div class="carousel-more"><a href="gtm.html">More on Growth &rarr;</a></div>
         </div>
 
         <!-- Solution -->
@@ -104,12 +104,14 @@
                 <div class="carousel-card-title" id="d-solution-title"></div>
                 <div class="carousel-card-desc"  id="d-solution-desc"></div>
             </div>
-            <div class="carousel-nav">
-                <button class="carousel-arrow" onclick="move('solution', -1)">&#8592;</button>
-                <span class="carousel-counter" id="d-solution-counter">1/4</span>
-                <button class="carousel-arrow" onclick="move('solution', 1)">&#8594;</button>
+            <div class="carousel-footer">
+                <div class="carousel-nav">
+                    <button class="carousel-arrow" onclick="move('solution', -1)">&#8592;</button>
+                    <span class="carousel-counter" id="d-solution-counter">1/4</span>
+                    <button class="carousel-arrow" onclick="move('solution', 1)">&#8594;</button>
+                </div>
+                <div class="carousel-more"><a href="solution.html">More on Solution &rarr;</a></div>
             </div>
-            <div class="carousel-more"><a href="solution.html">More on Solution &rarr;</a></div>
         </div>
 
         <!-- Delivery -->
@@ -119,12 +121,14 @@
                 <div class="carousel-card-title" id="d-delivery-title"></div>
                 <div class="carousel-card-desc"  id="d-delivery-desc"></div>
             </div>
-            <div class="carousel-nav">
-                <button class="carousel-arrow" onclick="move('delivery', -1)">&#8592;</button>
-                <span class="carousel-counter" id="d-delivery-counter">1/4</span>
-                <button class="carousel-arrow" onclick="move('delivery', 1)">&#8594;</button>
+            <div class="carousel-footer">
+                <div class="carousel-nav">
+                    <button class="carousel-arrow" onclick="move('delivery', -1)">&#8592;</button>
+                    <span class="carousel-counter" id="d-delivery-counter">1/4</span>
+                    <button class="carousel-arrow" onclick="move('delivery', 1)">&#8594;</button>
+                </div>
+                <div class="carousel-more"><a href="delivery.html">More on Delivery &rarr;</a></div>
             </div>
-            <div class="carousel-more"><a href="delivery.html">More on Delivery &rarr;</a></div>
         </div>
 
     </div>
@@ -138,7 +142,10 @@
             </div>
             <div class="swipe-sidebar right" onclick="swipeNav(1)">&#8594;</div>
         </div>
-        <div class="swipe-counter" id="swipe-counter">1 / 12</div>
+        <div class="swipe-footer">
+            <div class="swipe-counter" id="swipe-counter">1 / 12</div>
+            <div id="swipe-more"></div>
+        </div>
     </div>
 
 </div>

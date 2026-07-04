@@ -473,20 +473,6 @@ h1 {
     box-sizing: border-box;
 }
 
-/* Zone 0 — Category eyebrow: optional, only rendered when a card
-   supplies `category` (used by ai.html to tag GTM / Solution / Delivery
-   within a single shared carousel). Absent elsewhere — no visual change
-   to gtm.html, solution.html, delivery.html. */
-.sub-card-category {
-    font-size: var(--font-xs);
-    font-weight: 700;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    color: var(--clay);
-    opacity: 0.75;
-    margin-bottom: 4px;
-}
-
 /* Zone 1 — Title: 1 line fixed */
 .sub-card h3 {
     color: var(--clay);
@@ -1070,6 +1056,7 @@ h1 {
     letter-spacing: 0.3px;
     max-width: 860px;
     margin: 6px auto 14px auto;
+    text-wrap: balance;
 }
 
 .about-body {
@@ -1094,7 +1081,7 @@ h1 {
     margin: 0 auto;
     font-size: var(--font-tagline);
     font-weight: 500;
-    line-height: 1.4;
+    line-height: 1.65;
     color: var(--clay);
     font-style: italic;
 }
@@ -1140,10 +1127,31 @@ h1 {
     .belief { line-height: 1.7; margin: 10px auto 18px auto; }
 }
 
+/* Narrower effective width lets text-wrap:balance distribute lines more
+   evenly and avoids a lone trailing word — tuned separately for portrait
+   (tighter, fewer characters per line) vs landscape (wider, more room). */
+@media (max-width: 1023px) and (orientation: portrait) {
+    .belief { max-width: 90%; }
+}
+@media (max-width: 700px) and (orientation: portrait) {
+    .belief { max-width: 86%; }
+}
+@media (max-width: 1023px) and (orientation: landscape) {
+    .belief { max-width: 620px; }
+}
+
 @media (max-width: 1023px) {
     .narrative-frame  { height: auto; overflow: visible; padding-bottom: 0; }
-    .narrative-scroll { overflow-y: visible; }
-    .narrative-connect-strip { position: sticky; bottom: 0; background: var(--bg); padding: 10px var(--pad-page); }
+    .narrative-scroll { overflow-y: visible; padding-bottom: 64px; }
+    .narrative-connect-strip {
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 5;
+        background: var(--bg);
+        padding: 10px var(--pad-page);
+    }
 }
 
 
@@ -1162,6 +1170,14 @@ h1 {
     margin: 0 auto 8px auto;
     font-size: var(--font-base);
     line-height: 1.65;
+}
+
+/* The <br> is a deliberate desktop/landscape line separation between the
+   two halves of the sentence. In portrait — where the line is already
+   narrower — that forced break lands mid-clause and reads as broken.
+   Let it wrap naturally there instead. */
+@media (max-width: 1023px) and (orientation: portrait) {
+    .intro-br { display: none; }
 }
 
 /* Scrollable content zone between letterhead and connect strip */
@@ -1324,7 +1340,6 @@ h1 {
     align-items: center;
     justify-content: center;
     gap: 12px;
-    margin-top: 10px;
 }
 
 .carousel-arrow {
@@ -1352,10 +1367,21 @@ h1 {
     text-align: center;
 }
 
+/* Nav (arrows+counter) and the "More on X" link now share one row,
+   nav on the left, link on the right — instead of More sitting on its
+   own line below, which pushed the card taller than it needed to be. */
+.carousel-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-top: 10px;
+}
+
 .carousel-more {
     text-align: right;
-    margin-top: 16px;
     font-size: var(--font-xs);
+    white-space: nowrap;
 }
 
 .carousel-more a { color: var(--text-link); text-decoration: none; }
@@ -1455,11 +1481,24 @@ h1 {
 }
 
 .swipe-counter {
-    text-align: center;
     font-size: var(--font-xs);
     color: var(--text-secondary);
+}
+
+/* Counter and "More on X" now share one row, right-aligned to match
+   the desktop carousel's footer pattern instead of More floating
+   above the whole carousel. */
+.swipe-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
     margin-top: 8px;
 }
+
+#swipe-more { text-align: right; }
+#swipe-more a { color: var(--text-link); text-decoration: none; }
+#swipe-more a:hover { text-decoration: underline; }
 
 /* --- Compact overrides (≤1023px) --- */
 @media (max-width: 1023px) {

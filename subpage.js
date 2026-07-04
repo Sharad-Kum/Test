@@ -21,15 +21,25 @@ function chunk(arr, size) {
 const desktopPages = chunk(cards, 2);
 
 function buildCard(card) {
-    const categoryTag = card.category ? `<div class="sub-card-category">${card.category}</div>` : '';
     return `<div class="sub-card">
-        ${categoryTag}
         <h3>${card.title}</h3>
-        <div class="sub-mandate">Mandate: ${card.mandate}</div>
+        <div class="sub-mandate">${card.mandate}</div>
         <div class="sub-narrative">${card.narrative}</div>
         <ul>${card.bullets.map(b => `<li>${b}</li>`).join('')}</ul>
         <div class="sub-outcome">${card.outcome}</div>
     </div>`;
+}
+
+// Updates the "Key Highlights" section title to include the current
+// category (e.g. "Key Highlights — Solution") when cards carry a
+// `category` field, so it's stated once per page-turn instead of
+// repeated on every card. Pages whose cards have no category (gtm,
+// solution, delivery) leave the title at its plain default — this
+// only activates for pages like ai.html that mix categories.
+function updateSectionTitle(category) {
+    const title = document.getElementById('section-title');
+    if (!title) return;
+    title.textContent = category ? `Key Highlights \u2014 ${category}` : 'Key Highlights';
 }
 
 let desktopPage = 0;
@@ -37,10 +47,12 @@ let desktopPage = 0;
 const isMobileLandscape = () => window.innerWidth > LANDSCAPE_MIN_WIDTH_PX && window.innerHeight <= LANDSCAPE_MAX_HEIGHT_PX;
 
 function renderDesktop() {
+    const pageCards = desktopPages[desktopPage];
     document.getElementById('desktop-grid').innerHTML =
-        desktopPages[desktopPage].map(buildCard).join('');
+        pageCards.map(buildCard).join('');
     document.getElementById('desktop-counter').textContent =
         (desktopPage + 1) + ' / ' + desktopPages.length;
+    updateSectionTitle(pageCards[0] && pageCards[0].category);
 }
 
 function desktopNav(dir) {
@@ -67,6 +79,7 @@ function updateMobile() {
     if (!track || !counter) return;
     track.style.transform = `translateX(${-mobileCard * 100}%)`;
     counter.textContent = (mobileCard + 1) + ' / ' + cards.length;
+    updateSectionTitle(cards[mobileCard] && cards[mobileCard].category);
 }
 
 function mobileNav(dir) {
