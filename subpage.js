@@ -109,15 +109,21 @@ function initTouch() {
 }
 
 function updateSwipeVisibility() {
-    const mobile  = document.querySelector('.sub-carousel-mobile');
-    const desktop = document.querySelector('.sub-carousel-desktop');
+    const mobile     = document.querySelector('.sub-carousel-mobile');
+    const desktop    = document.querySelector('.sub-carousel-desktop');
+    const backToMain = document.querySelector('.back-to-main');
     if (!mobile || !desktop) return;
     if (isMobileLandscape()) {
+        // Short-viewport edge case: desktop carousel (with its own counter)
+        // is shown even under 1024px, so the standalone back-to-main needs
+        // to override the CSS media query that normally hides it here.
         mobile.style.display  = 'none';
         desktop.style.display = 'flex';
+        if (backToMain) backToMain.style.display = 'block';
     } else {
         mobile.style.display  = '';
         desktop.style.display = '';
+        if (backToMain) backToMain.style.display = '';
     }
 }
 

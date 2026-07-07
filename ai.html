@@ -73,12 +73,15 @@
                 </div>
                 <div class="sub-swipe-sidebar right" onclick="mobileNav(1)">&#8594;</div>
             </div>
-            <div class="sub-swipe-counter" id="mobile-counter">1 / 6</div>
+            <div class="sub-mobile-footer">
+                <span class="sub-swipe-counter" id="mobile-counter">1 / 6</span>
+                <a href="mywork.html" class="back-to-main-inline"><i class="fas fa-arrow-up"></i> Back to Main</a>
+            </div>
         </div>
 
     </div>
 
-    <!-- BACK TO MAIN -->
+    <!-- BACK TO MAIN (desktop position — hidden on mobile, where it's combined with the pagination counter above) -->
     <div class="back-to-main">
         <a href="mywork.html"><i class="fas fa-arrow-up"></i> Back to Main</a>
     </div>
@@ -97,19 +100,19 @@ const cards = [
             "Packaged fitment, tiering and guardrail frameworks from the engagement into reusable advisory IP for future AI-governance pursuits.",
             "Used the engagement as a reference narrative in executive and analyst conversations, opening a new advisory-led pipeline category."
         ],
-        outcome: "New advisory offering incubated | Differentiated vs. single-model competitors | Reference-led pipeline opened"
+        outcome: "Advisory reframed around fitment & control | Differentiated from single-model plays | Reference-led pipeline opened"
     },
     {
         category: "Growth & GTM",
         title: "Partner-Led AI Offering — Joint GTM for AI-Enabled Platforms",
         mandate: "Build joint go-to-market models with technology partners around AI-enabled, consumption-based offerings.",
-        narrative: "Extended existing ELA and joint-GTM playbooks — built with partners like HP, IBM and CA Technologies — into AI-enabled service constructs, aligning commercial models to how enterprises actually consume AI at scale.",
+        narrative: "Extended existing ELA and joint-GTM playbooks — built with major technology partners — into AI-enabled service constructs, aligning commercial models to how enterprises actually consume AI at scale.",
         bullets: [
             "Co-designed AI-enabled, pay-per-use and outcome-linked pricing constructs with technology partners to lower enterprise AI adoption friction.",
             "Positioned AI capability as a joint value proposition rather than a standalone product pitch, strengthening deal credibility with skeptical buying committees.",
             "Built qualification criteria distinguishing genuine AI-orchestration plays from repackaged automation, sharpening pursuit targeting."
         ],
-        outcome: "New AI-consumption pricing constructs | Stronger partner-led differentiation | Sharper pursuit qualification"
+        outcome: "AI-consumption pricing models co-created | Differentiated joint-GTM positioning | Sharper pursuit qualification"
     },
     {
         category: "Solution",
@@ -121,11 +124,11 @@ const cards = [
             "Designed governance guardrails covering access control, audit trail and policy-based routing across teams, geographies and functions.",
             "Built a scalable operating model the organization could run continuously — not a one-time pilot deployment."
         ],
-        outcome: "Governed AI operating model delivered | Enterprise-wide adoption path | Fitment, control & cost aligned"
+        outcome: "Multi-model governance framework delivered | Enterprise-wide adoption path cleared | Workloads matched on fitment, control & cost"
     },
     {
         category: "Solution",
-        title: "Predictive Classification for Cloud Migration",
+        title: "Predictive Classification for Cloud Migration (2017)",
         mandate: "Apply early ML-based classification to accelerate large-scale application segmentation.",
         narrative: "During a 6,000+ application cloud migration initiative, applied ML-based classification models to validate segmentation strategy — turning months of manual assessment into weeks, ahead of AI becoming mainstream in delivery tooling.",
         bullets: [
@@ -133,7 +136,7 @@ const cards = [
             "Reduced manual assessment effort from months to weeks while building a defensible, data-driven prioritization model.",
             "Used model output to validate and challenge manual assessments, catching inconsistencies before migration planning locked in."
         ],
-        outcome: "Months of assessment compressed to weeks | Defensible, data-driven prioritization | Early ML adoption in delivery (2017)"
+        outcome: "Months of assessment compressed to weeks | Defensible, data-driven prioritization | Early ML adoption in solution & delivery"
     },
     {
         category: "Delivery",
