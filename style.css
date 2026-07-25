@@ -320,6 +320,27 @@ h1 {
 }
 .ai-work-badge:hover { background: var(--clay-hover); }
 
+/* Audio-profile icon on index.html — same badge language as ai-work-badge,
+   centered since it sits alone between the letterhead and the belief line */
+.audio-profile-link {
+    text-align: center;
+    margin: 2px 0 2px 0;
+}
+.audio-profile-link a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    color: var(--clay);
+    background: var(--clay-faint-dim);
+    box-shadow: inset 0 0 0 1px var(--clay);
+    border-radius: 50%;
+    text-decoration: none;
+}
+.audio-profile-link a i { font-size: 17px; }
+.audio-profile-link a:hover { background: var(--clay-hover); }
+
 /* My Work header row: kept inline in both portrait and landscape.
    Width-based and orientation-based breakpoints both proved unreliable
    at correctly distinguishing "genuinely too narrow" from "just mobile" —
@@ -1093,7 +1114,7 @@ h1 {
     flex: 1;
     overflow-y: auto;
     scrollbar-width: none;
-    padding-bottom: 2px;
+    padding-bottom: 0;
 }
 
 .narrative-scroll::-webkit-scrollbar { display: none; }
@@ -1102,11 +1123,11 @@ h1 {
     text-align: center;
     font-size: clamp(14px, 1.5vw, 16px);
     font-weight: 600;
-    line-height: 1.55;
+    line-height: 1.5;
     color: var(--ink);
     letter-spacing: 0.3px;
     max-width: 860px;
-    margin: 4px auto 10px auto;
+    margin: 2px auto 6px auto;
     text-wrap: balance;
 }
 
@@ -1118,9 +1139,9 @@ h1 {
 .about-para {
     font-size: var(--font-base);
     font-weight: 400;
-    line-height: 1.58;
+    line-height: 1.54;
     color: var(--ink);
-    margin: 0 0 9px 0;
+    margin: 0 0 7px 0;
 }
 
 .g { color: var(--clay); font-weight: 600; }
@@ -1700,9 +1721,10 @@ h1 {
 .blogs-pager .sub-arrow:disabled { opacity: 0.35; cursor: default; }
 .blogs-page-indicator { font-size: var(--font-xs); color: var(--text-secondary); min-width: 40px; text-align: center; }
 
-/* Phone — unlock to normal scroll; strip stays sticky, not pinned
-   (shared .connect-strip mobile rule lives in the mywork module above) */
-@media (max-width: 700px) {
-    .blogs-frame { height: auto; overflow: visible; padding-bottom: 0; }
-    .blogs-scroll { overflow-y: visible; }
-}
+/* Previously this unlocked to normal document scroll on phones, but that
+   let position:sticky fall back to wherever the (short) post list ends
+   rather than the true bottom of the viewport — visible as dead space
+   between the list and the connect strip in portrait. Landscape never
+   hit this override (it's wider than 700px) and always looked right,
+   so portrait now uses that same fixed-height/internal-scroll behavior
+   instead of switching to a different one. */

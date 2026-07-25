@@ -31,8 +31,11 @@ def file_hash(path: Path) -> str:
 
 
 def update_references(asset_name: str, new_version: str) -> int:
-    pattern = re.compile(re.escape(asset_name) + r"\?v=[A-Za-z0-9]+")
-    replacement = f"{asset_name}?v={new_version}"
+    # Matches a quoted reference to the asset, with or without an existing
+    # ?v=... tag — so a bare href="style.css" gets a tag added, not just
+    # skipped, and can never again silently fall out of sync.
+    pattern = re.compile(r'"' + re.escape(asset_name) + r'(?:\?v=[A-Za-z0-9]+)?"')
+    replacement = f'"{asset_name}?v={new_version}"'
     changed_files = 0
 
     for html_file in SITE_DIR.glob("*.html"):
