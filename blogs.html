@@ -5,7 +5,30 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>My Blogs | Sharad Kumar</title>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=ad0dace5"></head>
+<link rel="stylesheet" href="style.css?v=ad0dace5">
+<style>
+  .blogs-segment { margin-bottom: 22px; }
+  .blogs-segment:last-child { margin-bottom: 0; }
+  .blogs-segment-title {
+    font-size: var(--font-sm);
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--clay);
+    line-height: 1;
+    margin: 0 0 10px 2px;
+  }
+  /* The shared .blogs-grid-wrap rule (min-height:100%, flex-centered) was
+     built for the old single-list page. Nested inside a stacked
+     .blogs-segment here, that percentage height is ambiguous. Reset to
+     plain block flow so every segment gets identical, predictable spacing. */
+  .blogs-scroll .blogs-grid-wrap {
+    min-height: 0;
+    display: block;
+  }
+  .blogs-scroll .blogs-card { align-items: center; }
+</style>
+</head>
 <body>
 <div class="blogs-frame">
 
@@ -29,24 +52,53 @@
 <div class="blogs-headline"><h1>My Blogs</h1></div>
 
 <div class="blogs-scroll">
-    <div class="blogs-grid-wrap">
-        <div class="blogs-grid" id="blogsGrid">
-            <a class="blogs-card" href="LinkedIn_Post_The_Real_Constraint_in_Transformation.html"><span class="blogs-card-num">01</span><span class="blogs-card-title">The Real Constraint in Transformation</span></a>
-            <a class="blogs-card" href="LinkedIn_Post_Observability_as_a_Solution_Capability.html"><span class="blogs-card-num">02</span><span class="blogs-card-title">Observability as a Solution Capability</span></a>
-            <a class="blogs-card" href="LinkedIn_Post_Engineering_Reliability_into_Digital_Solutions.html"><span class="blogs-card-num">03</span><span class="blogs-card-title">Engineering Reliability into Digital Solutions</span></a>
-            <a class="blogs-card" href="LinkedIn_Post_Rethinking_How_Engineering_Teams_Power_Solutions_and_Go-To-Market.html"><span class="blogs-card-num">04</span><span class="blogs-card-title">Rethinking How Engineering Teams Power Solutions and Go-To-Market</span></a>
-            <a class="blogs-card" href="LinkedIn_Post_Technology_Strategy_and_Market_Positioning.html"><span class="blogs-card-num">05</span><span class="blogs-card-title">Technology Strategy and Market Positioning</span></a>
-            <a class="blogs-card" href="LinkedIn_Post_The_Rise_of_AI-Assisted_Organisations.html"><span class="blogs-card-num">06</span><span class="blogs-card-title">The Rise of AI-Assisted Organisations</span></a>
-            <a class="blogs-card" href="LinkedIn_Post_The_Expanding_Role_of_Technology_Leaders.html"><span class="blogs-card-num">07</span><span class="blogs-card-title">The Expanding Role of Technology Leaders</span></a>
-            <a class="blogs-card" href="LinkedIn_Post_The_Quiet_Shift_in_Technology_Leadership.html"><span class="blogs-card-num">08</span><span class="blogs-card-title">The Quiet Shift in Technology Leadership</span></a>
-            <!-- ADD MORE CARDS HERE — newest first, increment the number — pagination kicks in automatically once the tier's ceiling is exceeded -->
+    <div class="blogs-segment">
+      <h2 class="blogs-segment-title">Leadership Transformation</h2>
+      <div class="blogs-grid-wrap">
+        <div class="blogs-grid" id="blogsGrid-leadership">
+            <a class="blogs-card" href="LinkedIn_Post_The_Quiet_Shift_in_Technology_Leadership.html" data-capsule-id="L01"><span class="blogs-card-title">The Quiet Shift in Technology Leadership</span></a>
+            <a class="blogs-card" href="LinkedIn_Post_Engineering_Reliability_into_Digital_Solutions.html" data-capsule-id="L02"><span class="blogs-card-title">Engineering Reliability into Digital Solutions</span></a>
+            <a class="blogs-card" href="LinkedIn_Post_The_Rise_of_AI-Assisted_Organisations.html" data-capsule-id="L03"><span class="blogs-card-title">The Rise of AI-Assisted Organisations</span></a>
+            <a class="blogs-card" href="LinkedIn_Post_Technology_Strategy_and_Market_Positioning.html" data-capsule-id="L04"><span class="blogs-card-title">Technology Strategy and Market Positioning</span></a>
+            <a class="blogs-card" href="LinkedIn_Post_Rethinking_How_Engineering_Teams_Power_Solutions_and_Go-To-Market.html" data-capsule-id="L05"><span class="blogs-card-title">Rethinking How Engineering Teams Power Solutions and Go-To-Market</span></a>
+            <a class="blogs-card" href="LinkedIn_Post_The_Real_Constraint_in_Transformation.html" data-capsule-id="L06"><span class="blogs-card-title">The Real Constraint in Transformation</span></a>
+            <a class="blogs-card" href="LinkedIn_Post_Observability_as_a_Solution_Capability.html" data-capsule-id="L07"><span class="blogs-card-title">Observability as a Solution Capability</span></a>
+            <a class="blogs-card" href="LinkedIn_Post_The_Expanding_Role_of_Technology_Leaders.html" data-capsule-id="L08"><span class="blogs-card-title">The Expanding Role of Technology Leaders</span></a>
+            <a class="blogs-card" href="LinkedIn_Post_The_Multidimensional_Leadership_Gap.html" data-capsule-id="L09"><span class="blogs-card-title">The Multidimensional Leadership Gap</span></a>
+            <a class="blogs-card" href="LinkedIn_Post_The_Myth_of_Three_Silos.html" data-capsule-id="L10"><span class="blogs-card-title">GTM, Solution and Delivery: The Myth of Three Silos</span></a>
+            <a class="blogs-card" href="LinkedIn_Post_Connecting_the_Enterprise_as_a_System.html" data-capsule-id="L11"><span class="blogs-card-title">Connecting the Enterprise as a System</span></a>
+            <a class="blogs-card" href="LinkedIn_Post_Delivery_Organizations_of_the_Future.html" data-capsule-id="L12"><span class="blogs-card-title">Delivery Organizations of the Future</span></a>
+            <a class="blogs-card" href="LinkedIn_Post_Organizational_Design_as_a_Leadership_Capability.html" data-capsule-id="L13"><span class="blogs-card-title">Organizational Design as a Leadership Capability</span></a>
+            <a class="blogs-card" href="LinkedIn_Post_The_Business_Leader_Who_Knows_Technology.html" data-capsule-id="L14"><span class="blogs-card-title">The Business Leader Who Knows Technology</span></a>
         </div>
+      </div>
     </div>
-    <div class="blogs-pager" id="blogsPager" hidden>
-        <button class="sub-arrow" id="blogsPrev" aria-label="Previous page"><i class="fas fa-chevron-left"></i></button>
-        <span class="blogs-page-indicator" id="blogsPageIndicator">1 / 1</span>
-        <button class="sub-arrow" id="blogsNext" aria-label="Next page"><i class="fas fa-chevron-right"></i></button>
+
+    <div class="blogs-segment">
+      <h2 class="blogs-segment-title">Observability</h2>
+      <div class="blogs-grid-wrap">
+        <div class="blogs-grid" id="blogsGrid-observability">
+            <a class="blogs-card" href="LinkedIn_Post_Impressions_vs_Members_Reached.html" data-capsule-id="O01"><span class="blogs-card-title">Impressions vs Members Reached</span></a>
+            <a class="blogs-card" href="LinkedIn_Post_The_Free_Tier_Question.html" data-capsule-id="O02"><span class="blogs-card-title">The Free-Tier Question</span></a>
+            <a class="blogs-card" href="LinkedIn_Post_When_Ideas_Dont_Reach_Their_Own_Network.html" data-capsule-id="O03"><span class="blogs-card-title">When an Idea Doesn't Reach Its Own Network</span></a>
+            <a class="blogs-card" href="LinkedIn_Post_Attention_Allocation_Systems.html" data-capsule-id="O04"><span class="blogs-card-title">Have Professional Networks Become Attention Allocation Systems?</span></a>
+            <a class="blogs-card" href="LinkedIn_Post_No_Response_Still_a_Signal.html" data-capsule-id="O05"><span class="blogs-card-title">No Response. Still a Signal</span></a>
+            <a class="blogs-card" href="LinkedIn_Post_The_Silence_Absence_of_Required_Transparency.html" data-capsule-id="O06"><span class="blogs-card-title">The Silence, Absence of Required Transparency: Closure</span></a>
+        </div>
+      </div>
     </div>
+
+    <div class="blogs-segment">
+      <h2 class="blogs-segment-title">Field Notes</h2>
+      <div class="blogs-grid-wrap">
+        <div class="blogs-grid" id="blogsGrid-others">
+            <a class="blogs-card" href="LinkedIn_Post_Deal_Behavior_Across_Global_Markets.html" data-capsule-id="M01"><span class="blogs-card-title">Deal Behavior Across Global Markets</span></a>
+            <a class="blogs-card" href="LinkedIn_Post_AI_Systems_Design_Fitment_Control_and_Cost_Alignment.html" data-capsule-id="M02"><span class="blogs-card-title">AI Systems Design: Fitment, Control, and Cost Alignment at Scale</span></a>
+            <a class="blogs-card" href="LinkedIn_Post_Seen_Through_the_Eyes_of_Two_AI_Collaborators.html" data-capsule-id="M03"><span class="blogs-card-title">Seen Through the Eyes of Two AI Collaborators</span></a>
+        </div>
+      </div>
+    </div>
+
 </div>
 
 <div class="connect-strip">
@@ -58,62 +110,6 @@
 </div>
 
 </div>
-
-<script>
-(function () {
-    const grid = document.getElementById('blogsGrid');
-    const cards = Array.from(grid.children);
-    const pager = document.getElementById('blogsPager');
-    const prevBtn = document.getElementById('blogsPrev');
-    const nextBtn = document.getElementById('blogsNext');
-    const indicator = document.getElementById('blogsPageIndicator');
-    let page = 0;
-
-    // Tier ceilings — past this many topics, the tier switches from
-    // "show everything, let it breathe" to "paginate".
-    function tierCeiling() {
-        const w = window.innerWidth;
-        if (w >= 1024) return 12;  // desktop
-        if (w >= 701)  return 16;  // tablet (portrait or landscape)
-        return 30;                  // phone — bounded scroll, ~3 screens
-    }
-
-    // Once paginating, how many cards per page.
-    function tierPageSize(ceiling) {
-        const w = window.innerWidth;
-        if (w <= 700) return 10;   // phone paginates in chunks of 10 past 30
-        return ceiling;             // desktop/tablet paginate in chunks equal to their own ceiling
-    }
-
-    function render() {
-        const total = cards.length;
-        const ceiling = tierCeiling();
-        const needsPaging = total > ceiling;
-        const pageSize = needsPaging ? tierPageSize(ceiling) : total;
-        const totalPages = needsPaging ? Math.ceil(total / pageSize) : 1;
-
-        if (page >= totalPages) page = totalPages - 1;
-        if (page < 0) page = 0;
-
-        cards.forEach((card, i) => {
-            const onThisPage = i >= page * pageSize && i < (page + 1) * pageSize;
-            card.style.display = onThisPage ? '' : 'none';
-        });
-
-        pager.hidden = !needsPaging;
-        if (needsPaging) {
-            indicator.textContent = (page + 1) + ' / ' + totalPages;
-            prevBtn.disabled = page === 0;
-            nextBtn.disabled = page === totalPages - 1;
-        }
-    }
-
-    prevBtn.addEventListener('click', () => { page -= 1; render(); });
-    nextBtn.addEventListener('click', () => { page += 1; render(); });
-    window.addEventListener('resize', render);
-    render();
-})();
-</script>
 
 </body>
 </html>

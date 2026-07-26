@@ -377,7 +377,7 @@ h1 {
    --------------------------------------------- */
 
 .sub-carousel-section {
-    flex: none;
+    flex: 1;
     display: flex;
     flex-direction: column;
     margin-bottom: 4px;
@@ -386,13 +386,14 @@ h1 {
 .sub-carousel-desktop {
     display: flex;
     flex-direction: column;
-    flex: none;
+    flex: 1;
 }
 
 .sub-page-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: var(--gap);
+    flex: 1;
     align-items: stretch;
 }
 
@@ -575,7 +576,8 @@ h1 {
 .sub-card ul {
     list-style: none;
     padding-left: 0;
-    margin: 0 0 calc(1.5em * 1) 0;
+    margin: 0 0 10px 0;
+    flex: 1;
     overflow: visible;
 }
 
@@ -599,7 +601,7 @@ h1 {
     top: 0;
 }
 
-/* Zone 5 — Outcome: pinned to bottom, 2 lines, top-left aligned */
+/* Zone 5 — Outcome: pinned to bottom */
 .sub-outcome {
     font-size: var(--font-xs);
     color: var(--text-green);
@@ -607,10 +609,9 @@ h1 {
     margin-top: auto;
     border-top: 1px solid var(--clay-faint-dim);
     line-height: 1.4;
-    height: calc(1.4em * 2);
+    height: calc(1.4em * 3);
     display: flex;
-    align-items: flex-start;
-    padding-top: 6px;
+    align-items: center;
     overflow: hidden;
     flex-shrink: 0;
 }
@@ -721,12 +722,12 @@ h1 {
         overflow: hidden;
     }
 
-    /* Outcome — top-left aligned in 2-line zone, matching desktop */
+    /* Outcome centred in 2-line zone */
     .sub-outcome {
         height: calc(1.4em * 2);
         display: flex;
-        align-items: flex-start;
-        padding-top: 6px;
+        align-items: center;
+        padding-top: 0;
         margin-top: 12px;
     }
 }
@@ -1354,39 +1355,6 @@ h1 {
     color: var(--clay);
     font-size: var(--font-title);
     margin-bottom: 3px;
-}
-
-/* --- Recognition strip: same card language as .box, left-aligned --- */
-.recognition-row {
-    display: flex;
-    justify-content: center;
-    gap: var(--gap);
-    flex-wrap: wrap;
-    margin: 14px 0 6px 0;
-}
-
-.recognition-item {
-    border: 1px solid var(--card-border);
-    background-color: var(--card-bg);
-    border-radius: var(--radius);
-    padding: 8px 12px;
-    text-align: left;
-    line-height: 1.35;
-    flex: 1 1 200px;
-    max-width: 260px;
-}
-
-.recognition-item b {
-    display: block;
-    color: var(--ink);
-    font-size: var(--font-sm);
-    margin-bottom: 2px;
-}
-
-.recognition-item span {
-    display: block;
-    color: var(--text-secondary);
-    font-size: var(--font-xs);
 }
 
 /* --- Desktop: three carousel columns --- */
