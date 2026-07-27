@@ -1486,6 +1486,29 @@ h1 {
     font-size: var(--font-xs);
 }
 
+/* Mobile/tablet: match the simple, full-width intro-grid treatment on
+   the sub-pages instead of narrow centered cards with side gaps.
+   Desktop (>=1024px) keeps the working 4-in-a-row card layout. */
+@media (max-width: 1023px) {
+    .recognition-row {
+        display: block;
+        margin: 4px 0 0 0;
+    }
+
+    .recognition-item {
+        border: none;
+        border-bottom: 1px solid var(--hairline);
+        background-color: transparent;
+        border-radius: 0;
+        padding: 10px 4px;
+        max-width: none;
+    }
+
+    .recognition-item:last-child {
+        border-bottom: none;
+    }
+}
+
 /* --- Desktop: three carousel columns --- */
 .carousel-section {
     margin-top: 8px;
