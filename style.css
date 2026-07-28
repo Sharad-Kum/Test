@@ -235,7 +235,7 @@ h1 {
 
 /* Sub-page intro narrative block */
 .intro-sub {
-    margin: 4px 0 8px 0;
+    margin: 2px 0 4px 0;
 }
 
 
@@ -247,7 +247,7 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 6px;
+    margin-bottom: 4px;
 }
 
 .header-center {
@@ -294,7 +294,8 @@ h1 {
    the fold on mobile. Scoped to sub-page-container only so mywork.html's
    header row (after the Impact Snapshot block) is unaffected. */
 .sub-page-container .page-header-row {
-    margin-top: 4px;
+    margin-top: 2px;
+    margin-bottom: 4px;
 }
 
 /* Reclaims vertical room specifically on mywork.html — the base 16/14px
@@ -362,7 +363,7 @@ h1 {
 }
 
 .back-to-main {
-    margin: 2px 0 4px 0;
+    margin: 8px 0 4px 0;
     text-align: right;
 }
 
@@ -380,7 +381,7 @@ h1 {
     flex: none;
     display: flex;
     flex-direction: column;
-    margin-bottom: 4px;
+    margin-bottom: 2px;
 }
 
 .sub-carousel-desktop {
@@ -402,7 +403,7 @@ h1 {
     justify-content: center;
     gap: 14px;
     margin-top: 20px;
-    margin-bottom: 8px;
+    margin-bottom: 2px;
 }
 
 .sub-arrow {
@@ -681,16 +682,12 @@ h1 {
 }
 
 .extra-section {
-    margin-top: 4px;
-    /* Parked for backlog (post-launch): content and structure kept in the
-       markup on solution.html/delivery.html, just not rendered for now.
-       Remove this line to bring it back once narrative/layout is ready. */
-    display: none;
+    margin-top: 2px;
 }
 
 .extra-section .page-sub-title {
     font-size: var(--font-sm);
-    margin-bottom: 4px;
+    margin-bottom: 2px;
 }
 
 .extra-grid {
@@ -703,7 +700,7 @@ h1 {
     border: 1px solid var(--card-border);
     background-color: var(--card-bg);
     border-radius: var(--radius);
-    padding: 6px 10px;
+    padding: 4px 10px;
     text-align: left;
     line-height: 1.35;
     font-size: var(--font-xs);
