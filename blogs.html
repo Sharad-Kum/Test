@@ -6,28 +6,6 @@
 <title>My Blogs | Sharad Kumar</title>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 <link rel="stylesheet" href="style.css?v=ad0dace5">
-<style>
-  .blogs-segment { margin-bottom: 22px; }
-  .blogs-segment:last-child { margin-bottom: 0; }
-  .blogs-segment-title {
-    font-size: var(--font-sm);
-    font-weight: 700;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--clay);
-    line-height: 1;
-    margin: 0 0 10px 2px;
-  }
-  /* The shared .blogs-grid-wrap rule (min-height:100%, flex-centered) was
-     built for the old single-list page. Nested inside a stacked
-     .blogs-segment here, that percentage height is ambiguous. Reset to
-     plain block flow so every segment gets identical, predictable spacing. */
-  .blogs-scroll .blogs-grid-wrap {
-    min-height: 0;
-    display: block;
-  }
-  .blogs-scroll .blogs-card { align-items: center; }
-</style>
 </head>
 <body>
 <div class="blogs-frame">
@@ -53,7 +31,10 @@
 
 <div class="blogs-scroll">
     <div class="blogs-segment">
-      <h2 class="blogs-segment-title">Leadership Transformation</h2>
+      <div class="blogs-cat-header">
+        <h2 class="blogs-segment-title">Leadership Transformation<span class="blogs-cat-count"> (14)</span></h2>
+        <i class="fa-solid fa-chevron-down blogs-cat-chevron"></i>
+      </div>
       <div class="blogs-grid-wrap">
         <div class="blogs-grid" id="blogsGrid-leadership">
             <a class="blogs-card" href="LinkedIn_Post_The_Quiet_Shift_in_Technology_Leadership.html" data-capsule-id="L01"><span class="blogs-card-title">The Quiet Shift in Technology Leadership</span></a>
@@ -75,7 +56,10 @@
     </div>
 
     <div class="blogs-segment">
-      <h2 class="blogs-segment-title">Observability</h2>
+      <div class="blogs-cat-header">
+        <h2 class="blogs-segment-title">Observability<span class="blogs-cat-count"> (6)</span></h2>
+        <i class="fa-solid fa-chevron-down blogs-cat-chevron"></i>
+      </div>
       <div class="blogs-grid-wrap">
         <div class="blogs-grid" id="blogsGrid-observability">
             <a class="blogs-card" href="LinkedIn_Post_Impressions_vs_Members_Reached.html" data-capsule-id="O01"><span class="blogs-card-title">Impressions vs Members Reached</span></a>
@@ -89,7 +73,10 @@
     </div>
 
     <div class="blogs-segment">
-      <h2 class="blogs-segment-title">Field Notes</h2>
+      <div class="blogs-cat-header">
+        <h2 class="blogs-segment-title">Field Notes<span class="blogs-cat-count"> (3)</span></h2>
+        <i class="fa-solid fa-chevron-down blogs-cat-chevron"></i>
+      </div>
       <div class="blogs-grid-wrap">
         <div class="blogs-grid" id="blogsGrid-others">
             <a class="blogs-card" href="LinkedIn_Post_Deal_Behavior_Across_Global_Markets.html" data-capsule-id="M01"><span class="blogs-card-title">Deal Behavior Across Global Markets</span></a>
@@ -110,6 +97,33 @@
 </div>
 
 </div>
+
+<script>
+(function () {
+  var segments = Array.prototype.slice.call(document.querySelectorAll('.blogs-segment'));
+
+  function collapseAll() {
+    segments.forEach(function (seg) {
+      seg.classList.remove('blogs-expanded');
+      seg.classList.remove('blogs-hidden');
+    });
+  }
+
+  segments.forEach(function (seg) {
+    var header = seg.querySelector('.blogs-cat-header');
+    header.addEventListener('click', function () {
+      var isExpanded = seg.classList.contains('blogs-expanded');
+      collapseAll();
+      if (!isExpanded) {
+        seg.classList.add('blogs-expanded');
+        segments.forEach(function (other) {
+          if (other !== seg) other.classList.add('blogs-hidden');
+        });
+      }
+    });
+  });
+})();
+</script>
 
 </body>
 </html>
