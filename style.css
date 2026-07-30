@@ -1891,6 +1891,10 @@ h1 {
 }
 .blogs-cat-header:hover { border-color: var(--clay-mid); background: var(--clay-bg); }
 
+@media (max-width: 700px) {
+    .blogs-cat-header { padding: 9px 14px; }
+}
+
 .blogs-cat-count {
     color: var(--text-secondary);
     font-weight: 400;
@@ -1917,7 +1921,15 @@ h1 {
    and vertically centers short lists), header flips its chevron, and
    its border joins seamlessly with the grid below it. */
 .blogs-segment.blogs-expanded { margin-bottom: 0; flex: 1; display: flex; flex-direction: column; min-height: 0; }
-.blogs-segment.blogs-expanded .blogs-cat-header { border-bottom: none; border-radius: var(--radius) var(--radius) 0 0; flex-shrink: 0; }
+.blogs-segment.blogs-expanded .blogs-cat-header {
+    border-bottom: none;
+    border-radius: var(--radius) var(--radius) 0 0;
+    flex-shrink: 0;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background: var(--bg);
+}
 .blogs-segment.blogs-expanded .blogs-cat-chevron { transform: rotate(180deg); }
 .blogs-segment.blogs-expanded .blogs-grid-wrap { display: flex; flex: 1; overflow-y: auto; align-items: flex-start; }
 
